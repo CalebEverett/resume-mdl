@@ -1,0 +1,50 @@
+[ccc]
+	name              = "Career College of California"
+	org_type          = "Experience"
+	location          = "Santa Ana, CA"
+	start_date        = "2010-02-01"
+	end_date          = "2016-03-31"
+	description       = """
+
+	"""
+
+[eme]
+	name              = "Eyemart Express, Ltd."
+	org_type          = "Experience"
+	location          = "Dallas, CA"
+	start_date        = "2015-02-01"
+	end_date          = "2015-06-31"
+	description       = """
+
+	"""
+
+[cse]
+	name              = "CSE Capital, LLC"
+	org_type          = "Experience"
+	location          = "San Francisco, CA"
+	start_date        = "2010-02-01"
+	end_date          = "2016-03-31"
+	description       = """
+
+	"""
+
+[ffl]
+	name              = "Friedman, Fleischer & Lowe, LLC"
+	org_type          = "Experience"
+	location          = "San Francisco, CA"
+	start_date        = "1999-01-01"
+	end_date          = "2005-09-30"
+	description       = """
+
+	"""
+
+[bs]
+	name              = "The Blackstone Group, L.P."
+	org_type          = "Experience"
+	location          = "New York, NY"
+	start_date        = "1997-09-01"
+	end_date          = "1999-08-31"
+	description       = """
+
+	"""
+

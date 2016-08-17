@@ -1,153 +1,91 @@
-baseurl                   = "http://calebeverett.dev/"
-languageCode              = "en-us"
-title                     = "Caleb Everett"
-theme                     = "resume-mdl"
+baseurl            = "http://calebeverett.dev/"
+languageCode       = "en-us"
+title              = "Caleb Everett"
+theme              = "resume-mdl"
 
 [taxonomies]
-tag                       = "tags"
-organization              = "organizations"
-skill                     = "skills"
+tag                = "tags"
+skill              = "skills"
 
 [menu]
   [[menu.main]]
-    name                  = "Home"
-    pre                   = "home"
-    url                   = "/"
-	weight                = 10
+    name           = "Home"
+    pre            = "home"
+    url            = "/"
+	weight         = 10
   [[menu.main]]
-    name                  = "Resume"
-    pre                   = "work"
-    url                   = "/resume"
-	weight                = 20
+    name           = "Resume"
+    pre            = "work"
+    url            = "/resume"
+	weight         = 20
   [[menu.main]]
-    name                  = "Projects"
-    pre                   = "build"
-    url                   = "/projects"
-	weight                = 30
+    name           = "Projects"
+    pre            = "build"
+    url            = "/projects"
+	weight         = 30
   [[menu.main]]
-    name                  = "Posts"
-    pre                   = "subject"
-    url                   = "/posts"
-	weight                = 40
+    name           = "Posts"
+    pre            = "subject"
+    url            = "/posts"
+	weight         = 40
 
-[organizations]
-	[[organizations.ccc]]
-		name              = "Career College of California"
-		org_type          = "Experience"
-		location          = "Santa Ana, CA"
-		start_date        = "2010-02-01"
-		end_date          = "2016-03-31"
-		description       = """
+[params.org_types]
+"10"               = "Experience"
+"20"               = "Education"
+"30"               = "Other"
 
-		"""
+[[params.orgs]]
+	id             = "ccc"
+	name           = "Career College of California"
+	org_type       = "10"
+	location       = "Santa Ana, CA"
+	start_date     = "2010-02-01"
+	end_date       = "2016-03-31"
+	description    = """
 
-	[[organizations.eme]]
-		name              = "Eyemart Express, Ltd."
-		org_type          = "Experience"
-		location          = "Dallas, CA"
-		start_date        = "2015-02-01"
-		end_date          = "2015-06-31"
-		description       = """
+	"""
 
-		"""
+[[params.orgs]]
+	id             = "eme"
+	name           = "Eyemart Express, Ltd."
+	org_type       = "10"
+	location       = "Dallas, CA"
+	start_date     = "2015-02-01"
+	end_date       = "2015-06-31"
+	description    = """
 
-	[[organizations.ccc]]
-		name              = "CSE Capital, LLC"
-		org_type          = "Experience"
-		location          = "San Francisco, CA"
-		start_date        = "2010-02-01"
-		end_date          = "2016-03-31"
-		description       = """
+	"""
 
-		"""
+[[params.orgs]]
+	id             = "cse"
+	name           = "CSE Capital, LLC"
+	org_type       = "10"
+	location       = "San Francisco, CA"
+	start_date     = "2010-02-01"
+	end_date       = "2007-01-01"
+	description    = """
 
-	[[organizations.ffl]]
-		name              = "Friedman, Fleischer & Lowe, LLC"
-		org_type          = "Experience"
-		location          = "San Francisco, CA"
-		start_date        = "1999-01-01"
-		end_date          = "2005-09-30"
-		description       = """
+	"""
 
-		"""
+[[params.orgs]]
+	id             = "ffl"
+	name           = "Friedman, Fleischer & Lowe, LLC"
+	org_type       = "10"
+	location       = "San Francisco, CA"
+	start_date     = "1999-01-01"
+	end_date       = "2005-09-30"
+	description    = """
 
-	[[organizations.bs]]
-		name              = "The Blackstone Group, L.P."
-		org_type          = "Experience"
-		location          = "New York, NY"
-		start_date        = "1997-09-01"
-		end_date          = "1999-08-31"
-		description       = """
+	"""
 
-		"""
+[[params.orgs]]
+	id             = "tbg"
+	name           = "The Blackstone Group, L.P."
+	org_type       = "10"
+	location       = "New York, NY"
+	start_date     = "1997-09-01"
+	end_date       = "1999-08-31"
+	description    = """
 
-	[[organizations.ms]]
-		name              = "Morgan Stanley & Company"
-		org_type          = "Experience"
-		location          = "New York, NY"
-		start_date        = "1995-09-01"
-		end_date          = "1997-08-31"
-		description       = """
-
-		"""
-
-	[[organizations.sbdc]]
-		name              = "Wharton Small Business Development Center"
-		org_type          = "Experience"
-		location          = "Philadelphia, PA"
-		start_date        = "1994-09-01"
-		end_date          = "1995-08-31"
-		description       = """
-
-		"""
-
-	[[organizations.upenn]]
-		name              = "Wharton School, University of Pennsylvania"
-		org_type          = "Education"
-		location          = "Philadelphia, PA"
-		start_date        = "1994-09-01"
-		end_date          = "1995-08-31"
-		description       = """
-		Bachelor of Science in Economics, magna cum laude, concentrations in finance and marketing.
-		"""
-
-	[[organizations.nova]]
-		name              = "Northern Virginia Community College"
-		org_type          = "Education"
-		location          = "Annandale, VA"
-		start_date        = "1990-09-01"
-		end_date          = "1992-12-31"
-		description       = """
-		Associate of Science in Business Administration, summa cum laude.
-		"""
-
-	[[organizations.wia]]
-		name              = "Santa Ana Work Force Investment Board"
-		org_type          = "Other"
-		location          = "Santa Ana, CA"
-		start_date        = "2013-01-01"
-		end_date          = "2016-01-31"
-		description       = """
-		Board member.
-		"""
-
-	[[organizations.hhs]]
-		name              = "Halstrom High School"
-		org_type          = "Other"
-		location          = "Mission Viejo, CA"
-		start_date        = "2011-01-01"
-		end_date          = "2013-01-01"
-		description       = """
-		Board member.
-		"""
-
-	[[organizations.rsec]]
-		name              = "Rising Sun Energy Center"
-		org_type          = "Other"
-		location          = "Berkekely, CA"
-		start_date        = "2008-01-01"
-		end_date          = "2014-01-01"
-		description       = """
-		President of the Board.
-		"""
+	"""
 

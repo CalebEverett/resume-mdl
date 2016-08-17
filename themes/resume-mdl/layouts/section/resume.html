@@ -1,0 +1,16 @@
+{{ define "main" }}
+	{{ $positions := .Data.Pages }}
+	<h1>{{.Site.Title}}</h1>
+	{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
+	<h2>{{ $orgTypeValue }}</h2>
+	{{ range $org := sort $.Site.Params.orgs "end_date" "desc" }}
+	{{ if eq $org.org_type $orgTypeKey }}
+	<h3>{{ $org.name }}</h3>
+	{{ range where $positions "Params.organization" $org.id }}
+	<li>{{ .Title }}</li>
+	<li>{{ .Params.organization }}: {{ $org.id }}</li>
+	{{ end }}
+	{{ end }}
+	{{ end }}
+	{{ end }}
+{{ end }}

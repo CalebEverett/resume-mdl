@@ -1,3 +1,4 @@
++++
 organization = "ccc"
 
 title = "Chief Executive Officer"
@@ -22,3 +23,4 @@ bullets = [
 	"Relocated, hired full staff, introduced new programs, developed and implemented comprehensive policies and procedures to support the achievement of outstanding student outcomes and growth of the institution.",
 	"Grew annual revenues from $150,000 to over $2.0 million.",
 ]
++++

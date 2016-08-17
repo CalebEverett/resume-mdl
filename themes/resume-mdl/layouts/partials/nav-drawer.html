@@ -1,0 +1,12 @@
+<div class="mdl-layout__drawer">
+	<img src="/images/profile.jpg" class="profile">
+	<span class="mdl-layout__title">{{ .Site.Title }}</span>
+	<span class="mdl-layout__title">415-760-0000</span>
+	<a class="mdl-layout__title" href="mailto:caleb@calebeverett.io" target="_blank">caleb@calebeverett.io</a></span>
+	<nav class="mdl-navigation">
+
+		{{ range .Site.Menus.main }}
+		<a class="mdl-navigation__link" href="{{ .URL }}"><i class="material-icons" role="presentation">{{ .Pre }}</i>{{ .Name }}</a>
+		{{end}}
+	</nav>
+</div>
