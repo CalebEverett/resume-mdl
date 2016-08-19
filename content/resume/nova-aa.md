@@ -1,0 +1,9 @@
++++
+org        = "nvcc"
+title      = "Associate of Science in Business Administration"
+end_date   = "1992-12-31"
+
+overview = """
+Summa cum laude.
+"""
++++

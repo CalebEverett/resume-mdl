@@ -1,7 +1,8 @@
 +++
-org = "eme"
-
-title = "Interim Chief Financial Officer"
+org        = "eme"
+title      = "Interim Chief Financial Officer"
+start_date = "2015-02-01"
+end_date   = "2015-06-30"
 
 skills = [
 "Audit Preparation",

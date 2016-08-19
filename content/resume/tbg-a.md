@@ -1,0 +1,20 @@
++++
+org        = "tbg"
+title      = "Analyst, Corporate Private Equity Group"
+start_date = "1997-09-01"
+end_date   = "1999-08-31"
+
+overview = """
+Supported execution of large scale private equity investments.
+"""
+
+[accomplishments]
+10 = "First third-year Analyst hired to the Corporate Private Equity Group."
+20 = "Led debt financings for Volume Services America, Inc., a contract food services company with over $400 million in revenue, including $160 million in term loans and $100 million in subordinated notes."
+30 = "Director of Volume Services America, Inc."
+
+skills = [
+"Private Equity",
+"Debt Financing",
+]
++++

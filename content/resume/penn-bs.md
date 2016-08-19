@@ -1,0 +1,9 @@
++++
+org        = "penn"
+title      = "Bachelor of Science in Economics"
+end_date   = "1995-05-31"
+
+overview = """
+Magna cum laude. Concentrations in finance and marketing.
+"""
++++

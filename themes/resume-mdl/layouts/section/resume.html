@@ -1,16 +1,60 @@
+{{ define "header" }}
+<header class="mdl-layout__header">
+	<div class="mdl-layout__header-row">
+		<!-- Title -->
+		<span class="mdl-layout-title">{{ .Site.Title }}</span>
+	</div>
+	<!-- Tabs -->
+	<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+		{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
+		<a href="#scroll-tab-{{ $orgTypeKey }}" class="mdl-layout__tab{{ if eq $orgTypeKey "10" }} is-active{{ end }}">{{ $orgTypeValue }}</a>
+		{{ end }}
+	</div>
+</header>
+{{ end }}
+
 {{ define "main" }}
-	{{ $positions := .Data.Pages }}
-	<h1>{{.Site.Title}}</h1>
-	{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
-	<h2>{{ $orgTypeValue }}</h2>
+{{ $positions := .Data.Pages }}
+{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
+<section class="mdl-layout__tab-panel{{ if eq $orgTypeKey "10" }} is-active{{ end }}" id="scroll-tab-{{ $orgTypeKey }}">
 	{{ range $org := sort $.Site.Params.orgs "end_date" "desc" }}
+	{{ $.Scratch.Set "details" false }}
 	{{ if eq $org.org_type $orgTypeKey }}
-	<h3>{{ $org.name }}</h3>
-	{{ range where $positions "Params.organization" $org.id }}
-	<li>{{ .Title }}</li>
-	<li>{{ .Params.organization }}: {{ $org.id }}</li>
+	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+		<div class="mdl-card mdl-cell mdl-cell--12-col">
+			<div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+				<div class="resume-title"><h4>{{ $org.name }}</h4><h4 class="org-location">{{ $org.location }}</h4></div>
+				{{ range where $positions "Params.org" $org.id }}
+				<div class="section__text mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+					<div class="resume-title">
+						<h5>{{ .Title }}</h5>
+						<div>
+							<h5>{{ with .Params.start_date }}{{ dateFormat "Jan 2006" . }} - {{ end }}{{ with .Params.end_date }}{{ dateFormat "Jan 2006" . }}{{ end }}</h5>
+						</div>
+					</div>
+					{{ with .Params.overview }}<p style="margin-bottom: 10px;">{{ . }}</p>{{ end }}
+					{{ with .Params.accomplishments }}
+					{{ $.Scratch.Set "details" true }}
+					<div style="padding-top: 0;" class="section__text mdl-cell mdl-cell--12-col">
+						<ul>
+							{{ range . }}
+							<li>{{ . }}</li>
+							{{ end }}
+						</ul>
+					</div>
+					{{ end }}
+				</div>
+				{{ end }}
+			</div>
+			{{ if eq ($.Scratch.Get "details") true }}
+			<div class="mdl-card__actions">
+				<a href="#" class="mdl-button">Show details</a>
+			</div>
+			{{ end }}
+		</div>
+	</section>
 	{{ end }}
 	{{ end }}
-	{{ end }}
-	{{ end }}
+</section>
+{{ end }}
 {{ end }}

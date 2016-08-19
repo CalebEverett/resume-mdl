@@ -1,0 +1,6 @@
++++
+org        = "wia"
+title      = "Member of the Board of Directors."
+start_date = "2013-12-13"
+end_date   = "2016-01-31"
++++
