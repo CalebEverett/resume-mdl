@@ -3,6 +3,11 @@
 	<div class="mdl-layout__header-row">
 		<!-- Title -->
 		<span class="mdl-layout-title">{{ .Site.Title }}</span>
+		<div class="mdl-layout-spacer"></div>
+		<button id="resume-more-all" class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreAllHandler(event)">
+			<i class="material-icons mdl-color-text--accent" role="presentation">expand_more</i>
+			<span for="resume-more-all" class="mdl-tooltip">Show Details</span>
+		</button>
 	</div>
 	<!-- Tabs -->
 	<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
@@ -18,27 +23,26 @@
 {{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
 <section class="mdl-layout__tab-panel{{ if eq $orgTypeKey "10" }} is-active{{ end }}" id="scroll-tab-{{ $orgTypeKey }}">
 	{{ range $org := sort $.Site.Params.orgs "end_date" "desc" }}
-	{{ $.Scratch.Set "details" false }}
 	{{ if eq $org.org_type $orgTypeKey }}
 	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 		<div class="mdl-card mdl-cell mdl-cell--12-col">
 			<div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
 				<div class="resume-title"><h4>{{ $org.name }}</h4><h4 class="org-location">{{ $org.location }}</h4></div>
 				{{ range where $positions "Params.org" $org.id }}
-				<div class="section__text mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+				<div class="resume-position section__text mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
 					<div class="resume-title">
 						<h5>{{ .Title }}</h5>
 						<div>
 							<h5>{{ with .Params.start_date }}{{ dateFormat "Jan 2006" . }} - {{ end }}{{ with .Params.end_date }}{{ dateFormat "Jan 2006" . }}{{ end }}</h5>
 						</div>
 					</div>
-					{{ with .Params.overview }}<p style="margin-bottom: 10px;">{{ . }}</p>{{ end }}
+					{{ with .Params.overview }}<span style="line-height: 26px; margin-bottom: 0;">{{ . }}</span>{{ end }}
 					{{ with .Params.accomplishments }}
-					{{ $.Scratch.Set "details" true }}
-					<div style="padding-top: 0;" class="section__text mdl-cell mdl-cell--12-col">
-						<ul>
+					<button class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreHandler(event)"><i style="font-size: 80%;" class="material-icons mdl-color-text--accent" role="presentation">expand_more</i></button>
+					<div style="padding-top: 0; margin: 0;" class="section__text mdl-cell mdl-cell--12-col">
+						<ul style="margin-top: 0;">
 							{{ range . }}
-							<li>{{ . }}</li>
+							<li class="resume-hidden">{{ . }}</li>
 							{{ end }}
 						</ul>
 					</div>
@@ -46,15 +50,14 @@
 				</div>
 				{{ end }}
 			</div>
-			{{ if eq ($.Scratch.Get "details") true }}
-			<div class="mdl-card__actions">
-				<a href="#" class="mdl-button">Show details</a>
-			</div>
-			{{ end }}
 		</div>
 	</section>
 	{{ end }}
 	{{ end }}
 </section>
 {{ end }}
+{{ end }}
+
+{{ define "footer" }}
+<script src="/js/resume.js"></script>
 {{ end }}

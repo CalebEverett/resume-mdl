@@ -9,16 +9,13 @@
 			{{ partial "nav-drawer" . }}
 			<main class="mdl-layout__content">
 			<div class="mdl-grid resume-content">
-				<!-- Code that all your templates share, like a header -->
-
 				{{ block "main" . }}
-				<!-- The part of the page that begins to differ between templates -->
 				{{ end }}
-
-				<!-- More shared code, perhaps a footer -->
 			</div>
 			</main>
 		</div>
 	</body>
 	<script src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+	{{ block "footer" . }}
+	{{ end }}
 </html>

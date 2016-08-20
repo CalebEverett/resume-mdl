@@ -1355,13 +1355,6 @@ html, body {
   top: 8px;
   right: 8px; }
 
-.resume-content section .section__circle {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 0;
-  flex-shrink: 1; }
-
 .resume-content section .section__text {
   flex-grow: 1;
   flex-shrink: 0;
@@ -1375,24 +1368,6 @@ html, body {
 .resume-content section .section__text a {
   text-decoration: none; }
 
-.resume-content section .section__circle-container > .section__circle-container__circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-  margin: 8px 0; }
-
-.resume-content section.section--footer .section__circle--big {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  margin: 8px 32px; }
-
-.resume-content .is-small-screen section.section--footer .section__circle--big {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 8px 16px; }
-
 .resume-content section.section--footer {
   padding: 64px 0;
   margin: 0 -8px -8px -8px; }
@@ -1402,6 +1377,13 @@ html, body {
 
 .resume-content .mdl-card .mdl-card__supporting-text > h3:first-child {
   margin-bottom: 24px; }
+
+.resume-content .mdl-card li {
+  transition: opacity 50; }
+
+.resume-hidden {
+  max-height: 0px;
+  opacity: 0; }
 
 .demo-charts {
   align-items: center; }
