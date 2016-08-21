@@ -28,69 +28,11 @@ theme              = "resume-mdl"
 	url            = "/posts"
 	weight         = 40
 
+[params]
+	email = "caleb@calebeverett.io"
+
 [params.org_types]
 	10             = "Experience"
 	20             = "Education"
 	30             = "Other"
-
-[[params.orgs]]
-	id             = "ccc"
-	name           = "Career College of California"
-	org_type       = "10"
-	location       = "Santa Ana, CA"
-[[params.orgs]]
-	id             = "eme"
-	name           = "Eyemart Express, Ltd."
-	org_type       = "10"
-	location       = "Dallas, TX"
-[[params.orgs]]
-	id             = "cse"
-	name           = "CSE Capital, LLC"
-	org_type       = "10"
-	location       = "San Francisco, CA"
-[[params.orgs]]
-	id             = "ffl"
-	name           = "Friedman, Fleischer & Lowe, LLC"
-	org_type       = "10"
-	location       = "San Francisco, CA"
-[[params.orgs]]
-	id             = "tbg"
-	name           = "The Blackstone Group, L.P."
-	org_type       = "10"
-	location       = "New York, NY"
-[[params.orgs]]
-	id             = "ms"
-	name           = "Morgan Stanley & Company"
-	org_type       = "10"
-	location       = "New York, NY"
-[[params.orgs]]
-	id             = "sbdc"
-	name           = "Wharton Small Business Development Center"
-	org_type       = "10"
-	location       = "Philadelphia, PA"
-[[params.orgs]]
-	id             = "penn"
-	name           = "The Wharton School, University of Pennsylvania"
-	org_type       = "20"
-	location       = "Philadelphia, PA"
-[[params.orgs]]
-	id             = "nvcc"
-	name           = "Northern Virginia Community College"
-	org_type       = "20"
-	location       = "Annandale, VA"
-[[params.orgs]]
-	id             = "wia"
-	name           = "Santa Ana Workforce Investment Board"
-	org_type       = "30"
-	location       = "Santa Ana, CA"
-[[params.orgs]]
-	id             = "hhs"
-	name           = "Halstrom Academy"
-	org_type       = "30"
-	location       = "Mission Viejo, CA"
-[[params.orgs]]
-	id             = "rsec"
-	name           = "Rising Sun Energy Center"
-	org_type       = "30"
-	location       = "Berkeley, CA"
 

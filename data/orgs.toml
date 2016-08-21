@@ -1,0 +1,49 @@
+[ccc]
+	name           = "Career College of California"
+	org_type       = "10"
+	location       = "Santa Ana, CA"
+[eme]
+	name           = "Eyemart Express, Ltd."
+	org_type       = "10"
+	location       = "Dallas, TX"
+[cse]
+	name           = "CSE Capital, LLC"
+	org_type       = "10"
+	location       = "San Francisco, CA"
+[ffl]
+	name           = "Friedman, Fleischer & Lowe, LLC"
+	org_type       = "10"
+	location       = "San Francisco, CA"
+[tbg]
+	name           = "The Blackstone Group, L.P."
+	org_type       = "10"
+	location       = "New York, NY"
+[ms]
+	name           = "Morgan Stanley & Company"
+	org_type       = "10"
+	location       = "New York, NY"
+[sbdc]
+	name           = "Wharton Small Business Development Center"
+	org_type       = "10"
+	location       = "Philadelphia, PA"
+[penn]
+	name           = "The Wharton School, University of Pennsylvania"
+	org_type       = "20"
+	location       = "Philadelphia, PA"
+[nvcc]
+	name           = "Northern Virginia Community College"
+	org_type       = "20"
+	location       = "Annandale, VA"
+[wia]
+	name           = "Santa Ana Workforce Investment Board"
+	org_type       = "30"
+	location       = "Santa Ana, CA"
+[hhs]
+	name           = "Halstrom Academy"
+	org_type       = "30"
+	location       = "Mission Viejo, CA"
+[rsec]
+	name           = "Rising Sun Energy Center"
+	org_type       = "30"
+	location       = "Berkeley, CA"
+

@@ -22,6 +22,7 @@ const moreHandler = (event) => {
 
 const moreAllHandler = (event) => {
     const moreAllIcon = event.currentTarget.getElementsByTagName('i')[0]
+    const moreAllTool = event.currentTarget.getElementsByTagName('span')[0]
     const positions = document.getElementsByClassName('resume-position')
 
     for (let i = positions.length -1; i>=0; i--) {
@@ -49,4 +50,10 @@ const moreAllHandler = (event) => {
         }
     }
     toggleMore(moreAllIcon)
+    if (moreAllIcon.innerHTML == 'expand_more') {
+        moreAllTool.innerHTML = 'Show Details'
+    } else {
+        moreAllTool.innerHTML = 'Hide Details'
+    }
+
 }

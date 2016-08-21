@@ -1,0 +1,36 @@
+{{ $ruleLength := 50 }}
+{{- $orgs := .Site.Data.orgs -}}
+{{- $positions := sort .Site.Data.positions "end_date" "desc" -}}
+
+
+{{- range sort $positions "end_date" -}}
+	{{- $.Scratch.SetInMap "orgMap" .org (dict "id" .org "end_date" .end_date) -}}
+{{- end -}}
+{{- $sortedOrgs := sort ($.Scratch.GetSortedMapValues "orgMap") "end_date" "desc" -}}
+{{ range (seq 1 $ruleLength) }}-{{ end }}
+
+# {{ upper .Site.Title }}
+**{{ default "your@email.com" (index .Site.Params "email") }}**
+
+{{ range (seq 1 $ruleLength) }}-{{ end }}
+
+{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types -}}
+{{ $orgTypeValue }}
+{{ range (seq 1 $ruleLength) }}={{ end }}
+
+{{ range $sortedOrgs }}
+{{ $orgKey := .id }}
+{{- $org := index $orgs $orgKey -}}
+{{- if eq $org.org_type $orgTypeKey -}}
+{{ $org.name | safeHTML }}
+{{ range (seq 1 (len (split $org.name ""))) }}-{{end}}
+
+{{ range $positions -}}
+{{- if eq .org $orgKey -}}
+### {{ .title }}
+{{ end -}}
+{{ end }}
+{{ end -}}
+{{- end }}
+{{ end }}
+

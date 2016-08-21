@@ -1,8 +1,7 @@
-+++
 org        = "ccc"
 title      = "Chief Information Officer"
 start_date = "2010-02-01"
-end_date   = "2016-03-31"
+end_date   = "2016-03-30"
 
 skills = [
 "Application Development",
@@ -26,4 +25,3 @@ accomplishments = [
 "Implemented Edline learning management system to deliver curriculum and support instruction.",
 "Implemented Google Apps for Education in order to provide students with a permanent school email address and to serve as the primary basis for faculty and staff collaboration."
 ]
-+++

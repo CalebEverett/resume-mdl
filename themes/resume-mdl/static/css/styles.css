@@ -1209,24 +1209,6 @@ ul, ol {
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased; }
 
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif; }
-
 .resume-content {
   max-width: 860px; }
 
@@ -1236,10 +1218,7 @@ html, body {
   border-radius: 24px; }
 
 .mdl-layout__drawer .resume-avatar {
-  margin-bottom: 16px; }
-
-.resume-drawer {
-  border: none; }
+  margin-bottom: 8px; }
 
 /* iOS Safari specific workaround */
 .resume-drawer .mdl-menu__container {
@@ -1258,8 +1237,9 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 16px;
-  height: 151px; }
+  padding: 0px 0px 8px 16px;
+  height: 113px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13); }
 
 .resume-drawer__nav {
   flex-grow: 1; }
@@ -1273,6 +1253,25 @@ html, body {
 .resume-drawer__nav .mdl-navigation__link .material-icons {
   font-size: 24px;
   margin-right: 32px; }
+
+.resume-content .mdl-card .mdl-card__supporting-text {
+  margin: 40px;
+  flex-grow: 1;
+  padding: 0;
+  color: inherit;
+  width: calc(100% - 80px); }
+
+.resume-content .mdl-layout__tab-panel section:not(:last-of-type) {
+  position: relative;
+  margin-bottom: 48px; }
+
+.resume-content section .section__text {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding-top: 14px; }
+
+.resume-content section.section--center .section__text:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13); }
 
 .resume-content .mdl-card {
   height: auto;
@@ -1288,102 +1287,23 @@ html, body {
   justify-content: space-between;
   width: 100%; }
 
-.org-location {
-  font-size: 125% !important; }
+.resume-title .resume-location {
+  margin-top: 7px; }
 
-.secton__text .resume-title {
-  margin-top: 10px; }
-
-.resume-content .mdl-card .mdl-card__supporting-text {
-  margin: 40px;
-  flex-grow: 1;
-  padding: 0;
-  color: inherit;
-  width: calc(100% - 80px); }
-
-.resume-content .mdl-card__supporting-text h4 {
-  margin-top: 0;
-  margin-bottom: 20px; }
-
-.resume-content .mdl-card__actions {
-  margin: 0;
-  padding: 4px 40px;
-  color: inherit; }
-
-.resume-content .mdl-card__actions a {
-  color: #00BCD4;
+.resume-title ul {
   margin: 0; }
-
-.resume-content .mdl-card__actions a:hover,
-.resume-content .mdl-card__actions a:active {
-  color: inherit;
-  background-color: transparent; }
-
-.resume-content .mdl-card__supporting-text + .mdl-card__actions {
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
-
-.resume-content #add {
-  position: absolute;
-  right: 40px;
-  top: 36px;
-  z-index: 999; }
-
-.resume-content .mdl-layout__tab-panel section:not(:last-of-type) {
-  position: relative;
-  margin-bottom: 48px; }
-
-.resume-content section.section--center {
-  max-width: 860px; }
-
-.resume-content #features section.section--center {
-  max-width: 620px; }
-
-.resume-content section > header {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.resume-content section > .section__play-btn {
-  min-height: 200px; }
-
-.resume-content section > header > .material-icons {
-  font-size: 3rem; }
-
-.resume-content section > button {
-  position: absolute;
-  z-index: 99;
-  top: 8px;
-  right: 8px; }
-
-.resume-content section .section__text {
-  flex-grow: 1;
-  flex-shrink: 0;
-  padding-top: 14px; }
-
-.resume-content section .section__text h5 {
-  font-size: inherit;
-  margin: 0;
-  margin-bottom: 0.5em; }
-
-.resume-content section .section__text a {
-  text-decoration: none; }
-
-.resume-content section.section--footer {
-  padding: 64px 0;
-  margin: 0 -8px -8px -8px; }
-
-.resume-content section.section--center .section__text:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.13); }
-
-.resume-content .mdl-card .mdl-card__supporting-text > h3:first-child {
-  margin-bottom: 24px; }
-
-.resume-content .mdl-card li {
-  transition: opacity 50; }
+  .resume-title ul li {
+    transition: opacity 50; }
+  .resume-title ul li:last-of-type {
+    margin-bottom: 10px; }
 
 .resume-hidden {
   max-height: 0px;
-  opacity: 0; }
+  opacity: 0;
+  margin-bottom: 0 !important; }
+
+.resume-position p {
+  margin: 0; }
 
 .demo-charts {
   align-items: center; }

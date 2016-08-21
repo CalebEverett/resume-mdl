@@ -1,8 +1,7 @@
 <div class="resume-drawer mdl-layout__drawer">
 	<header class="resume-drawer__header">
 	<img src="/images/avatar.jpg" class="resume-avatar">
-	<span>415-760-0000</span>
-	<a href="mailto:caleb@calebeverett.io" target="_blank">caleb@calebeverett.io</a>
+	<a href="mailto:{{ default "your@email.com" (index .Site.Params "email") }}" target="_blank">{{ default "your@email.com" (index .Site.Params "email") }}</a>
 	</header>
 	<nav class="resume-drawer__nav mdl-navigation">
 		{{ range .Site.Menus.main }}
