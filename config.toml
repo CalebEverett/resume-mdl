@@ -1,38 +1,67 @@
-baseurl            = "http://calebeverett.dev/"
-languageCode       = "en-us"
-title              = "Caleb Everett"
-theme              = "resume-mdl"
+baseurl                   = "http://r.calebeverett.io"
+languageCode              = "en-us"
+title                     = "Caleb Everett"
+theme                     = "resume-mdl"
+pluralizelisttitles       = false
 
 [taxonomies]
-	tag            = "tags"
-	skill          = "skills"
+	tag                   = "tags"
+	skill                 = "skills"
 
 [[menu.main]]
-	name           = "Home"
-	pre            = "home"
-	url            = "/"
-	weight         = 10
+	name                  = "Home"
+	pre                   = "home"
+	url                   = "/"
+	weight                = 10
 [[menu.main]]
-	name           = "Resume"
-	pre            = "work"
-	url            = "/resume"
-	weight         = 20
+	name                  = "Resume"
+	pre                   = "work"
+	url                   = "/resume"
+	weight                = 20
 [[menu.main]]
-	name           = "Projects"
-	pre            = "build"
-	url            = "/projects"
-	weight         = 30
-[[menu.main]]
-	name           = "Posts"
-	pre            = "subject"
-	url            = "/posts"
-	weight         = 40
+	name                  = "Posts"
+	pre                   = "subject"
+	url                   = "/posts"
+	weight                = 30
 
 [params]
-	email = "caleb@calebeverett.io"
+	default_featured_img  = "default_featured_img.png"
+	email                 = "caleb@calebeverett.io"
 
 [params.org_types]
-	10             = "Experience"
-	20             = "Education"
-	30             = "Other"
+	10                    = "Experience"
+	20                    = "Education"
+	30                    = "Other"
 
+[params.social]
+# Key corresponds to css icon class name.
+# Include username in first element to display.
+# Add networks with new rows and updating fonts and stylesheet from https://icomoon.io/app/#/select.
+	facebook              = ["CalebEverett", "https://facebook.com/"]
+	github                = ["CalebEverett", "https://github.com/"]
+	googleplus            = ["CalebEverett", "https://plus.google.com/+"]
+	linkedin              = ["CalebEverett", "https://www.linkedin.com/in/"]
+	twitter               = ["CalebEverett", "https://twitter.com/"]
+
+[params.share]
+	facebook              = true
+	googleplus            = true
+	hackernews            = true
+	linkedin              = true
+	reddit                = true
+	twitter               = true
+
+[params.styles]
+# Primary and accent colors will update cdn style sheet and take color inputs from here: ttps://getmdl.io/customize/index.html.
+# Other colors come from here: https://material.google.com/style/color.html#color-color-palette.
+# Class names can be found here: https://github.com/WebRTL/material-design-lite-rtl/blob/master/src/palette/_palette.scss.
+# Use the "mdl-color-text" classes for the "_text" variables.
+	primary_color         = "blue_grey"
+	accent_color          = "red"
+	background_color      = "mdl-color--grey-50"
+	header_color          = ""
+	header_color_text     = ""
+	nav_header_color      = "mdl-color-text--primary"
+	nav_header_color_text = ""
+	nav_color             = ""
+	nav_color_text        = "mdl-color-text--primary"

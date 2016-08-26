@@ -13,24 +13,30 @@
 **{{ default "your@email.com" (index .Site.Params "email") }}**
 
 {{ range (seq 1 $ruleLength) }}-{{ end }}
+{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
+## {{ upper $orgTypeValue -}}
+{{ range $sortedOrgs -}}
+{{ $orgKey := .id -}}
+{{ $org := index $orgs $orgKey -}}
+{{- if eq $org.org_type $orgTypeKey }}
 
-{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types -}}
-{{ $orgTypeValue }}
-{{ range (seq 1 $ruleLength) }}={{ end }}
-
-{{ range $sortedOrgs }}
-{{ $orgKey := .id }}
-{{- $org := index $orgs $orgKey -}}
-{{- if eq $org.org_type $orgTypeKey -}}
-{{ $org.name | safeHTML }}
-{{ range (seq 1 (len (split $org.name ""))) }}-{{end}}
-
+{{ $org.name | safeHTML }} | {{ $org.location | safeHTML }}
+{{ range (seq 1 (len (split $org.name ""))) }}-{{end}}---{{ range (seq 1 (len (split $org.location ""))) }}-{{ end }}
 {{ range $positions -}}
-{{- if eq .org $orgKey -}}
-### {{ .title }}
-{{ end -}}
-{{ end }}
-{{ end -}}
-{{- end }}
-{{ end }}
+{{- if eq .org $orgKey }}
+### {{ .title }} | {{ trim (partial "dates" .) "\n" }}
+{{- with .overview }}
 
+{{ . }}
+{{- end -}}
+{{ with .accomplishments -}}
+{{ $accompLen := len . -}}
+{{ range $index, $value := . }}
+* {{ $value | safeHTML -}}
+{{- end -}}{{/* range $index, $value := . */}}
+{{- end -}}{{/* with .accomplishments */}}
+{{ end }}{{/* if eq .org $orgKey */}}
+{{- end }}{{/* range $positions */}}
+{{- end }}{{/* if eq $org.org_type $orgTypeKey */}}
+{{- end }}{{/* range $sortedOrgs */}}
+{{- end }}{{/* range $orgTypeKey, $orgTypeValue := .Site.Params.org_types */}}

@@ -1,94 +1,64 @@
-.resume-content {
-  max-width: 860px;
-}
-.resume-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-}
-.mdl-layout__drawer .resume-avatar {
-  margin-bottom: 8px;
-}
-/* iOS Safari specific workaround */
-.resume-drawer .mdl-menu__container {
-  z-index: -1;
-}
-.resume-drawer .resume-drawer__nav {
-  z-index: -2;
-}
-/* END iOS Safari specific workaround */
-.resume-drawer .mdl-menu .mdl-menu__item {
-  display: flex;
-  align-items: center;
-}
-.resume-drawer__header {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0px 0px 8px 16px;
-  height: 113px;
-  border-bottom: 1px solid rgba(0,0,0,.13);
-}
-.resume-drawer__nav {
-  flex-grow: 1;
-}
-.resume-layout .resume-drawer__nav .mdl-navigation__link {
-  display: flex !important;
-  flex-direction: row;
-  align-items: center;
-  font-weight: 500;
-}
-.resume-drawer__nav .mdl-navigation__link .material-icons {
-  font-size: 24px;
-  margin-right: 32px;
-}
+// Custom Styles
 
-// resume styles
+.resume-content {
+	max-width: 860px;
+}
 .resume-content .mdl-card .mdl-card__supporting-text {
-  margin: 40px;
-  flex-grow: 1;
-  padding: 0;
-  color: inherit;
-  width: calc(100% - 80px);
+	margin: 7%;
+	flex-grow: 1;
+	padding: 0;
+	color: inherit;
+	width: 86%;
+}
+.mdl-chip {
+	line-height: 24px;
+	height: 24px;
+	margin: 5px auto;
+}
+.mdl-chip__contact {
+	line-height: 24px;
+	height: 24px;
+	width: 24px;
+	font-size: 13px;
+}
+// Styles for constructing the resume.
+.resume-content .mdl-layout__tab-panel section:first-of-type {
+	margin-top: 7%;
 }
 .resume-content .mdl-layout__tab-panel section:not(:last-of-type) {
-  position: relative;
-  margin-bottom: 48px;
+	position: relative;
+	margin-bottom: 7%;
 }
-.resume-content section .section__text {
-  flex-grow: 1;
-  flex-shrink: 0;
-  padding-top: 14px;
-}
-.resume-content section.section--center .section__text:not(:last-child) {
-  border-bottom: 1px solid rgba(0,0,0,.13);
-}.resume-content .mdl-card {
-  height: auto;
-  display: flex;
-  flex-direction: column;
+.resume-content .resume-org .resume-position:not(:last-child) {
+	border-bottom: 1px solid rgba(0,0,0,.13);
 }
 .resume-content .mdl-card > * {
-  height: auto;
+	height: auto;
 }
 .resume-title {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: baseline;
+	width: 100%;
+}
+.resume-title .mdl-typography--headline {
+	margin-bottom: 7px;
 }
 .resume-title .resume-location {
 	margin-top: 7px; 
 }
-.resume-title ul {
-  margin: 0;
-  li {
-    transition: opacity 50;
-
-  }
-  li:last-of-type {
-    margin-bottom: 10px;
-  }
+.resume-title .mdl-typography--subhead {
+	margin-top: 10px;
+}
+.resume-position ul {
+	margin: 4px 0px 4px 0px;
+}  
+.resume-position ul li {
+	transition: opacity 50;
+}
+.resume-position ul li:last-of-type {
+	margin-bottom: 10px;
 }
 .resume-hidden {
 	max-height: 0px;
@@ -96,8 +66,16 @@
 	margin-bottom: 0 !important;
 }
 .resume-position p {
-  margin: 0;
+	margin: 0;
 }
+.mdl-layout__tab-bar-button {
+	background-color: inherit;
+}
+.mdl-layout__header .mdl-layout__drawer-button {
+	color: inherit;
+}
+
+
 
 .demo-charts {
   align-items: center;

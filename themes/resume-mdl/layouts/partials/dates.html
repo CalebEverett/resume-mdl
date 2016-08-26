@@ -1,0 +1,2 @@
+{{/* Renders date range for dict with "start_date" and "end_date" keys. */}}
+{{ with .start_date }}{{ dateFormat "Jan 2006" . }} - {{ end }}{{ with .end_date }}{{ dateFormat "Jan 2006" . }}{{ end }}

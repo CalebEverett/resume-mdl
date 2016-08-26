@@ -1,2 +1,40 @@
-<h1>Default Single Template</h1>
-{{ printf "%#v" .  }}
+<!DOCTYPE html>
+<html lang="en">
+	{{ partial "head" . }}
+	<body>
+		<div class="resume-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+			{{ partial "nav-drawer" . }}
+			<main class="mdl-layout__content {{ .Site.Params.styles.background_color }}">
+			<div class="mdl-grid resume-content">
+				<article class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+					<div  class="mdl-card__title mdl-color--primary-dark"{{ with .Params.featured_img }} style="background-image: url('/images/{{ . }}');"{{ end }}>
+						<h2 class="mdl-typography--display-1 {{ default "mdl-color-text--accent-contrast" .Params.title_color }}">{{ .Title }}</h2>
+					</div>
+					<div class="resume-article__icons mdl-typography--body-1 mdl-color-text--primary">
+						<div>
+							<div><i class="material-icons">date_range</i>{{ div (sub .Now.Unix .Date.Unix ) 86400 }} days ago</div>
+							<div><i class="material-icons">query_builder</i>{{ .ReadingTime }} minute read</div>
+						</div>
+						<div>
+							{{ $page_data := . -}}
+							{{ range $key, $value := .Site.Params.share }}
+							<a href="{{ partial (printf "%s" (print "share/" $key)) $page_data }}" class="mdl-button mdl-js-button mdl-button--icon"><i class="icon-{{ $key }}"></i></a>
+							{{ end }}
+						</div>
+					</div>
+					<div class="resume-article__tags mdl-cell mdl-cell--12-col">
+						{{ range .Params.tags }}
+						<a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="mdl-chip">
+							<span class="mdl-chip__text mdl-color-text--primary">{{ . }}</span>
+						</a>
+						{{ end }}
+					</div>
+					<div class=mdl-card__supporting-text>{{ .Content }}</div>
+				</article>
+				<div class="mdl-layout-spacer"></div>
+			</div>
+			</main>
+		</div>
+	</body>
+	<script src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+</html>

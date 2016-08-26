@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-	{{ partial "head" . }}
+	{{ block "head" . }}
+		{{ partial "head" . }}
+	{{ end }}
 	<body>
 		<div class="resume-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 			{{ block "header" . }}
 				{{ partial "header" . }}
 			{{ end }}
 			{{ partial "nav-drawer" . }}
-			<main class="mdl-layout__content mdl-color--grey-50">
+			<main class="mdl-layout__content {{ .Site.Params.styles.background_color }}">
 			<div class="mdl-grid resume-content">
-				{{ block "main" . }}
-				{{ end }}
+			{{ block "main" . }}
+			{{ end }}
 			</div>
 			</main>
 		</div>

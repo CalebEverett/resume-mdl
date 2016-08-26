@@ -1,13 +1,26 @@
 <div class="resume-drawer mdl-layout__drawer">
-	<header class="resume-drawer__header">
-	<img src="/images/avatar.jpg" class="resume-avatar">
-	<a href="mailto:{{ default "your@email.com" (index .Site.Params "email") }}" target="_blank">{{ default "your@email.com" (index .Site.Params "email") }}</a>
+	<header class="resume-drawer__header{{ with .Site.Params.styles.nav_header_color }} {{ . }}{{ end }}">
+		<img src="/images/avatar.jpg" class="resume-avatar" />
+		<ul class="{{ with .Site.Params.styles.nav_header_color_text }} {{ . }}{{ end }}">
+			{{ range $key, $value := .Site.Params.social -}}
+			{{if ne (index $value 0) "" }}
+			<li><a title="{{ index $value 0 }}" href="{{ index $value 1 }}{{ index $value 0 }}" class="mdl-button mdl-js-button mdl-button--icon"><i class="icon-{{ $key }}"></i></a></li>
+			{{ end -}}
+			{{ end -}}
+			{{ with .Site.Params.email }}<li><a title="{{ . }}" href="mailto:{{ . }}" class="mdl-button mdl-js-button mdl-button--icon" target="_blank"><i class="material-icons" role="presentation">email</i></a></li>{{ end }}
+		</ul>
 	</header>
-	<nav class="resume-drawer__nav mdl-navigation">
-		{{ range .Site.Menus.main }}
-		<a class="mdl-navigation__link" href="{{ .URL }}"><i class="material-icons" role="presentation">{{ .Pre }}</i>{{ .Name }}</a>
-		{{end}}
-	<div class="mdl-layout-spacer"></div>
-	<a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+	<nav class="resume-drawer__nav mdl-navigation {{ .Site.Params.styles.nav_color }} {{ .Site.Params.styles.nav_color_text }}">
+		{{- range .Site.Menus.main -}}
+		<a class="mdl-navigation__link{{ with $.Site.Params.styles.nav_color_text }} {{ . }}{{ end }}" href="{{ .URL }}"><i class="material-icons" role="presentation">{{ .Pre }}</i>{{ .Name }}</a>
+		{{ end -}}
+		<div class="resume-drawer__nav-tags">
+			{{ range $tag, $tag_data := .Site.Taxonomies.tags }}
+			<a href="{{ "/tags/" | relURL }}{{ $tag | urlize }}" class="mdl-chip">
+				<span class="mdl-chip__contact mdl-color-text--accent">{{ $tag_data.Count }}</span>
+				<span class="mdl-chip__text mdl-color-text--primary">{{ $tag | humanize }}</span>
+			</a>
+			{{ end }}
+		</div>
 	</nav>
 </div>

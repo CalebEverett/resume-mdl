@@ -1,16 +1,24 @@
 {{ define "header" }}
-<header class="mdl-layout__header">
+<header class="mdl-layout__header mdl-layout__header--waterfall mdl-shadow--2dp {{ .Site.Params.styles.header_color }} {{ .Site.Params.styles.header_color_text }}">
 	<div class="mdl-layout__header-row">
 		<span class="mdl-layout-title">{{ .Site.Title }}</span>
 		<div class="mdl-layout-spacer"></div>
 		<button id="resume-more-all" class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreAllHandler(event)">
-			<i class="material-icons mdl-color-text--accent" role="presentation">expand_more</i>
+			<i class="material-icons {{ .Site.Params.styles.header_color_text }}" role="presentation">expand_more</i>
 			<span for="resume-more-all" class="mdl-tooltip">Show Details</span>
 		</button>
+		<a href="/resume/print/" id="resume-print" class="mdl-button mdl-js-button mdl-button--icon">
+			<i class="material-icons {{ .Site.Params.styles.header_color_text }}" role="presentation">print</i>
+			<span for="resume-print" class="mdl-tooltip">Print</span>
+		</a>
+		<a href="/resume/text/" download="{{ .Site.Title | urlize }}.txt" id="resume-download" class="mdl-button mdl-js-button mdl-button--icon">
+			<i class="material-icons {{ .Site.Params.styles.header_color_text }}" role="presentation">file_download</i>
+			<span for="resume-download" class="mdl-tooltip">Download Text File</span>
+		</a>
 	</div>
-	<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+	<div class="mdl-layout__tab-bar mdl-js-ripple-effect {{ .Site.Params.styles.header_color }}">
 		{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
-		<a href="#scroll-tab-{{ $orgTypeKey }}" class="mdl-layout__tab{{ if eq $orgTypeKey "10" }} is-active{{ end }}">{{ $orgTypeValue }}</a>
+		<a href="#scroll-tab-{{ $orgTypeKey }}" class="mdl-layout__tab {{ $.Site.Params.styles.header_color_text }} {{ if eq $orgTypeKey "10" }} is-active{{ end }}">{{ $orgTypeValue }}</a>
 		{{ end }}
 	</div>
 </header>
@@ -25,14 +33,13 @@
 	{{ $.Scratch.SetInMap "orgMap" .org (dict "id" .org "end_date" .end_date) }}
 {{ end }}
 {{ $sortedOrgs := sort ($.Scratch.GetSortedMapValues "orgMap") "end_date" "desc" }}
-
 {{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
 <section class="mdl-layout__tab-panel{{ if eq $orgTypeKey "10" }} is-active{{ end }}" id="scroll-tab-{{ $orgTypeKey }}">
 	{{ range $sortedOrgs }}
 	{{ $orgKey := .id }}
 	{{ $org := index $orgs $orgKey }}
 	{{ if eq $org.org_type $orgTypeKey }}
-	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+	<section class="resume-org mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 		<div class="mdl-card mdl-cell mdl-cell--12-col">
 			<div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
 				<div class="resume-title">
@@ -41,23 +48,23 @@
 				</div>
 				{{ range $positions }}
 				{{ if eq .org $orgKey }}
-				<div class="resume-position section__text mdl-cell mdl-cell--12-col">
+				<div class="resume-position mdl-cell mdl-cell--12-col">
 					<div class="resume-title">
 						<div class="mdl-typography--subhead">{{ .title }}</div>
 						<div>
-							<div class="mdl-typography--body-1">{{ with .start_date }}{{ dateFormat "Jan 2006" . }} - {{ end }}{{ with .end_date }}{{ dateFormat "Jan 2006" . }}{{ end }}</div>
+							<div class="mdl-typography--body-1">{{ partial "dates" . }}</div>
 						</div>
 					</div>
-					{{ with .overview }}<p class="mdl-typography--body-1">{{ . }}</p>{{ end }}
+					{{ with .overview }}<span class="mdl-typography--body-1">{{ . }}</span>{{ end }}
 					{{ with .accomplishments }}
-					<button class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreHandler(event)"><i style="font-size: 80%;" class="material-icons mdl-color-text--accent" role="presentation">expand_more</i></button>
-					<div class="resume-title">
-						<ul>
-							{{ range . }}
-							<li class="resume-hidden">{{ . }}</li>
-							{{ end }}
-						</ul>
-					</div>
+					<button class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreHandler(event)">
+						<i class="material-icons mdl-color-text--accent" role="presentation">expand_more</i>
+					</button>
+					<ul>
+						{{ range . }}
+						<li class="resume-hidden">{{ . }}</li>
+						{{ end }}
+					</ul>
 					{{ end }}
 				</div>
 				{{ end }}
@@ -72,5 +79,5 @@
 {{ end }}
 
 {{ define "footer" }}
-<script src="/js/resume.js"></script>
+<script src="/js/resume-transpiled.js"></script>
 {{ end }}
