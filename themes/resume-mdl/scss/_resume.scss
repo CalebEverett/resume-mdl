@@ -1,0 +1,144 @@
+// Global styles
+.resume-layout {
+	min-height: 100vh;
+}
+.resume-content {
+    width: 100%;
+    max-width: $resume-max-card-width;
+    margin: auto;
+}
+.mdl-chip {
+	line-height: 24px;
+	height: 24px;
+	margin: 5px auto;
+}
+.mdl-chip__contact {
+	line-height: 24px;
+	height: 24px;
+	width: 24px;
+	font-size: 13px;
+}
+.mdl-layout__tab-bar-button {
+	background-color: inherit;
+}
+.mdl-layout__header .mdl-layout__drawer-button {
+	color: inherit;
+    padding: -8px;
+}
+.resume__prev-next {
+    width: calc(100% - 20px);
+    margin: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    a {
+        height: 100%;
+        flex-grow: 0;
+        display: flex;
+        align-items: center;
+    }
+    div {
+        flex-grow: 1;
+    }
+}
+
+
+// https://github.com/google/material-design-lite/issues/4015
+.mdl-layout__header--waterfall {
+  overflow: visible;
+}
+.mdl-layout__header--waterfall.is-compact {
+  overflow: hidden;
+}
+
+// Resume styles
+header.resume-resume-header {
+    div.mdl-layout__header-row {
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: initial;
+                    text-decoration: none;
+                }
+                i {
+                    margin-right: 24px;
+                }
+            }
+        }
+    }
+}
+div.resume-content section.mdl-layout__tab-panel {
+    width: 100%;
+    div.resume-org-type {
+        padding-top: 20px;
+        min-height: calc(100vh - 124px);
+        display:flex;
+        flex-direction: column;
+        h5 {
+            text-align: center;
+            margin-bottom: 40px;
+            display: none;
+            text-transform: uppercase;
+        }
+        @include card-margin();
+        .mdl-card__supporting-text {
+            flex-grow: 0;
+            padding: 0;
+            color: inherit;
+            margin-bottom: 20px;
+            max-width: $resume-max-content-width;
+            &:last-of-type {
+                margin-bottom: 7%;
+            }
+            .resume-title {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: baseline;
+                width: 100%;
+                .mdl-typography--headline {
+                    margin-bottom: 10px;
+                }
+                .resume-location {
+                    margin-bottom: 7px;
+                }
+            }
+            .resume-position {
+                p {
+                    text-align: justify;
+                    margin-bottom: 6px;
+                }
+                button.resume-more i {
+                    font-size: 20px;
+                }
+                ul {
+                    margin: 4px 0px 4px 0px;
+                    li {
+                        text-align: justify;
+                        transition: opacity 50;
+                        &:last-of-type {
+                            margin-bottom: 10px;
+
+                        }
+                    }
+                }
+            }
+        }
+        div.resume-spacer {
+             flex-grow: 1;
+        }
+    }
+}
+.resume-hidden {
+	max-height: 0px;
+	opacity: 0;
+	margin-bottom: 0 !important;
+}
+
+
+

@@ -46,4 +46,16 @@
 	name           = "Rising Sun Energy Center"
 	org_type       = "30"
 	location       = "Berkeley, CA"
+[mav]
+	name           = "Milestone AV Technologies"
+	org_type       = "30"
+	location       = "Eden Prairie, MN"
+[st]
+	name           = "Steelpoint Technologies"
+	org_type       = "30"
+	location       = "Boston, MA"
+[vsa]
+	name           = "Volume Services America"
+	org_type       = "30"
+	location       = "Spartanburg, SC"
 

@@ -1,57 +1,88 @@
-const toggleMore = (el) => {
-    if (el.innerHTML == 'expand_more') {
-        el.innerHTML = 'expand_less'
+'use strict';
+
+var moreHandler = function moreHandler(event) {
+    var parentEl = event.currentTarget.parentElement.parentElement;
+    var listEls = parentEl.querySelectorAll('li');
+    var moreIcon = event.currentTarget.querySelector('i');
+    var time = 0;
+
+    var _loop = function _loop(i) {
+        setTimeout(function () {
+            listEls[i].classList.toggle('resume-hidden');
+        }, time);
+        time += 15;
+    };
+
+    for (var i = listEls.length - 1; i >= 0; i--) {
+        _loop(i);
+    }
+
+    if (moreIcon.innerHTML == 'expand_more') {
+        moreIcon.innerHTML = 'expand_less';
     } else {
-        el.innerHTML = 'expand_more'
+        moreIcon.innerHTML = 'expand_more';
     }
-}
+};
 
-const moreHandler = (event) => {
-    const parentEl = event.currentTarget.parentElement
-    const listEls = parentEl.getElementsByTagName('li')
-    let moreIcon = event.currentTarget.getElementsByTagName('i')[0]
-    let time = 0
-    for (let i = listEls.length -1; i>=0; i--) {
-        setTimeout(() => {
-            listEls[i].classList.toggle('resume-hidden')
-        }, time)
-        time += 15
-    }
-    toggleMore(moreIcon)
-}
+var moreAllHandler = function moreAllHandler(event) {
+    var menuDelay = 300;
+    var moreAllIcon = event.currentTarget.querySelector('i');
+    var moreAllText = event.currentTarget.querySelector('span');
+    var positions = document.querySelectorAll('.resume-position');
 
-const moreAllHandler = (event) => {
-    const moreAllIcon = event.currentTarget.getElementsByTagName('i')[0]
-    const moreAllTool = event.currentTarget.getElementsByTagName('span')[0]
-    const positions = document.getElementsByClassName('resume-position')
-    for (let i = positions.length -1; i>=0; i--) {
-        let items = positions[i].getElementsByTagName('li')
-        let moreIcon = positions[i].getElementsByTagName('i')[0]
-        let time = 0
+    var _loop2 = function _loop2(i) {
+        var items = positions[i].querySelectorAll('li');
+        var moreIcon = positions[i].querySelector('i');
+        var time = 0;
 
         if (moreAllIcon.innerHTML == 'expand_more') {
-            for (let j = items.length -1; j>=0; j--) {
-                setTimeout(() => {
-                    items[j].classList.remove('resume-hidden')
-                }, time)
-                time += 15
-            }
-            if (moreIcon) moreIcon.innerHTML = 'expand_less'
-        } else {
-            for (let j = items.length -1; j>=0; j--) {
-                setTimeout(() => {
-                    items[j].classList.add('resume-hidden')
-                }, time)
-                time += 15
-            }
-            if (moreIcon) moreIcon.innerHTML = 'expand_more'
-        }
-    }
-    toggleMore(moreAllIcon)
-    if (moreAllIcon.innerHTML == 'expand_more') {
-        moreAllTool.innerHTML = 'Show Details'
-    } else {
-        moreAllTool.innerHTML = 'Hide Details'
-    }
-}
+            var _loop3 = function _loop3(j) {
+                setTimeout(function () {
+                    items[j].classList.remove('resume-hidden');
+                }, time);
+                time += 15;
+            };
 
+            for (var j = items.length - 1; j >= 0; j--) {
+                _loop3(j);
+            }
+            if (moreIcon) moreIcon.innerHTML = 'expand_less';
+        } else {
+            var _loop4 = function _loop4(_j) {
+                setTimeout(function () {
+                    items[_j].classList.add('resume-hidden');
+                }, time);
+                time += 15;
+            };
+
+            for (var _j = items.length - 1; _j >= 0; _j--) {
+                _loop4(_j);
+            }
+            if (moreIcon) moreIcon.innerHTML = 'expand_more';
+        }
+    };
+
+    for (var i = positions.length - 1; i >= 0; i--) {
+        _loop2(i);
+    }
+
+    if (moreAllIcon.innerHTML == 'expand_less') {
+        moreAllIcon.innerHTML = 'expand_more';
+    } else {
+        moreAllIcon.innerHTML = 'expand_less';
+    }
+};
+"use strict";
+
+function prevNextHandler(event) {
+	event.preventDefault();
+	var newActive = event.currentTarget.getAttribute("href");
+	var activeEls = document.querySelectorAll(".is-active");
+	var newActiveTab = document.querySelector("a[href='" + newActive + "']");
+	var newActiveSection = document.querySelector("section[id=" + newActive.slice(1) + "]");
+	for (var i = 0; i < activeEls.length; i++) {
+		activeEls[i].classList.remove("is-active");
+	}
+	newActiveTab.classList.add("is-active");
+	newActiveSection.classList.add("is-active");
+}

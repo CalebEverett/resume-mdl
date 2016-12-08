@@ -1,0 +1,77 @@
+div.resume-drawer {
+    .mdl-layout__drawer .resume-avatar {
+        margin-bottom: 8px;
+    }
+    /* iOS Safari specific workaround */
+    .resume-drawer .mdl-menu__container {
+        z-index: -1;
+    }
+    .resume-drawer .resume-drawer__nav {
+        z-index: -2;
+    }
+    /* END iOS Safari specific workaround */
+    .resume-drawer .mdl-menu .mdl-menu__item {
+        display: flex;
+        align-items: center;
+    }
+    header.resume-drawer__header {
+        padding: 0px 16px 15px 16px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-end;
+        border-bottom: 1px solid rgba(0,0,0,.13);
+        img.resume-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            margin: 16px 16px 0px 0px;
+        }
+        div {
+            padding-top: 16px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+            [class*="icon"] {
+                font-size: 20px;
+            }
+        }
+    }
+    nav.resume-drawer__nav {
+        box-sizing: border-box;
+        flex-grow: 1;
+        a.mdl-navigation__link {
+            flex-direction: row;
+            align-items: flex-end;
+            font-weight: 500;
+            i.material-icons {
+                font-size: 24px;
+                margin-right: 32px;
+            }
+        }
+        .resume-drawer__nav-tags {
+            h5 {
+                margin: 16px 0 0 0;
+                padding: 32px 16px 0px 16px;
+                border-top: 1px solid rgba(0,0,0,.13);
+                @media (min-width: $resume-nav-drawer-width-fixed) {
+                    padding-left: 32px;
+                }
+            }
+            div {
+                padding: 16px;
+                @media (min-width: $resume-nav-drawer-width-fixed) {
+                    padding-left: 32px;
+                }
+                a {
+                    width: fit-content;
+                }
+            }
+            .mdl-chip__contact {
+                margin-right: 0;
+            }
+        }
+    }
+    .resume-layout .resume-drawer__nav     .resume-layout .resume-drawer__nav .mdl-navigation__link:last-of-type {
+    }
+}
+

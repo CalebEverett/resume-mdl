@@ -1,9 +1,9 @@
 +++
-date         = "2016-08-30"
-title        = "While I Was At It, I Did This Too"
-title_color  = "mdl-color-text--accent-contrast"
-featured_img = "default_featured_img.png"
-tags         = ["coding", "salesforce", "education", "missions", "education technology"]
+date = "2016-06-21"
+title = "This is Some of My Best Work"
+title_color = "mdl-color-text--accent-contrast"
+featured_img = ""
+tags = ["coding", "salesforce", "education", "missions", "education technology",]
 +++
 # H1
 ## H2

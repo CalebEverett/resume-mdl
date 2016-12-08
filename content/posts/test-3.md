@@ -1,9 +1,9 @@
 +++
-date         = "2016-08-30"
-title        = "While I Was At It, I Did This Too"
-title_color  = "mdl-color-text--accent-contrast"
+date = "2016-08-21"
+title = "How to Do Some Really Awesome Shnizzle"
+title_color = "mdl-color-text--accent-contrast"
 featured_img = "default_featured_img.png"
-tags         = ["coding", "salesforce", "education", "missions", "education technology"]
+tags = ["coding", "salesforce", "education", "missions", "education technology",]
 +++
 # H1
 ## H2

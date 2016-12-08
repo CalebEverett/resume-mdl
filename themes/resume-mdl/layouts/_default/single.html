@@ -1,40 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-	{{ partial "head" . }}
-	<body>
-		<div class="resume-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-			{{ partial "nav-drawer" . }}
-			<main class="mdl-layout__content {{ .Site.Params.styles.background_color }}">
-			<div class="mdl-grid resume-content">
-				<article class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col">
-					<div  class="mdl-card__title mdl-color--primary-dark"{{ with .Params.featured_img }} style="background-image: url('/images/{{ . }}');"{{ end }}>
-						<h2 class="mdl-typography--display-1 {{ default "mdl-color-text--accent-contrast" .Params.title_color }}">{{ .Title }}</h2>
-					</div>
-					<div class="resume-article__icons mdl-typography--body-1 mdl-color-text--primary">
-						<div>
-							<div><i class="material-icons">date_range</i>{{ div (sub .Now.Unix .Date.Unix ) 86400 }} days ago</div>
-							<div><i class="material-icons">query_builder</i>{{ .ReadingTime }} minute read</div>
-						</div>
-						<div>
-							{{ $page_data := . -}}
-							{{ range $key, $value := .Site.Params.share }}
-							<a href="{{ partial (printf "%s" (print "share/" $key)) $page_data }}" class="mdl-button mdl-js-button mdl-button--icon"><i class="icon-{{ $key }}"></i></a>
-							{{ end }}
-						</div>
-					</div>
-					<div class="resume-article__tags mdl-cell mdl-cell--12-col">
-						{{ range .Params.tags }}
-						<a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="mdl-chip">
-							<span class="mdl-chip__text mdl-color-text--primary">{{ . }}</span>
-						</a>
-						{{ end }}
-					</div>
-					<div class=mdl-card__supporting-text>{{ .Content }}</div>
-				</article>
-				<div class="mdl-layout-spacer"></div>
-			</div>
-			</main>
+{{ define "header" }}
+<header class="resume-post-header mdl-layout__header {{ .Site.Params.styles.header_color }} {{ .Site.Params.styles.header_color_text }}">
+	<div class="mdl-layout__header-row">
+	</div>
+</header>
+{{ end }}
+{{ define "main" }}
+	<article class="resume-post mdl-card mdl-shadow--2dp">
+		<div  class="mdl-card__title mdl-color--primary {{ default "mdl-color-text--accent-contrast" .Params.title_color }}"{{ with .Params.featured_img }} style="background-image: url('/images/{{ . }}');"{{ end }}>
+			<button class="mdl-button mdl-js-button mdl-button--icon" onclick="window.history.back();">
+				<i class="material-icons" role="presentation">arrow_back</i>
+			</button>
+			<h2 class="mdl-typography--display-1">{{ .Title }}</h2>
 		</div>
-	</body>
-	<script src="https://code.getmdl.io/1.2.0/material.min.js"></script>
-</html>
+		<div class="resume-article__icons mdl-typography--body-1{{ with .Site.Params.styles.nav_color_text }} {{ . }}{{ end }}">
+			<div><i class="material-icons">date_range</i><time id="postdate" datetime="{{ .Date.Unix }}"></time></div>
+			<div><i class="material-icons">query_builder</i>{{ .ReadingTime }} minute read</div>
+			<div class="resume-spacer"></div>
+			<button id="resume-share" class="mdl-button mdl-js-button mdl-button--icon">
+				<i class="material-icons">share</i>
+			</button>
+			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect " for="resume-share">
+				<li class="mdl-menu__item share-email"><a {{with .Site.Params.styles.nav_color_text }}class="{{ . }}"{{ end }} title="share by email" href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank"><i class="material-icons" role="presentation">email</i></a></li>
+				{{ $page_data := . -}}
+				{{ range $key, $value := .Site.Params.share -}}
+				<li class="mdl-menu__item"><a {{with $.Site.Params.styles.nav_color_text }}class="{{ . }}"{{ end }} title="share on {{ $key }}" href="{{ partial (printf "%s" (print "share/" $key)) $page_data }}" target="_blank"><i class="icon-{{ $key }}"></i></a></li>
+				{{ end -}}
+			</ul>
+		</div>
+		<div class="resume-article__tags">
+			{{ range .Params.tags -}}
+			<a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="mdl-chip {{ default "mdl-color--grey-200" $.Site.Params.styles.chip_color }}">
+				<span class="mdl-chip__text{{ with $.Site.Params.styles.chip_color_text }} {{ . }}{{ end }}">{{ . }}</span>
+			</a>
+			{{ end -}}
+		</div>
+		<div class="mdl-card__supporting-text">{{ .Content }}</div>
+		<div class="resume__prev-next">
+			{{- with .PrevInSection -}}
+			<a href="{{ .Permalink }}" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+				<i class="material-icons">keyboard_arrow_left</i><span>{{ .Title }}</span>
+			</a>
+			{{ end -}}
+			<div></div>
+			{{- with .NextInSection -}}
+			<a href="{{ .Permalink }}" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+				<span>{{ .Title }}</span><i class="material-icons">keyboard_arrow_right</i>
+			</a>
+			{{ end -}}
+		</div>
+	</article>
+{{ end }}
+{{ define "footer" }}
+<script src="/js/timeago.js"></script>
+{{ end }}

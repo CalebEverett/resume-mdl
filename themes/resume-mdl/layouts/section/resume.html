@@ -1,20 +1,13 @@
 {{ define "header" }}
-<header class="mdl-layout__header mdl-layout__header--waterfall mdl-shadow--2dp {{ .Site.Params.styles.header_color }} {{ .Site.Params.styles.header_color_text }}">
+<header class="resume-resume-header mdl-layout__header mdl-layout__header--waterfall mdl-shadow--2dp{{ with .Site.Params.styles.header_color }} {{ . }}{{ end }}{{ with .Site.Params.styles.header_color_text }} {{ . }}{{ end }}">
 	<div class="mdl-layout__header-row">
 		<span class="mdl-layout-title">{{ .Site.Title }}</span>
 		<div class="mdl-layout-spacer"></div>
-		<button id="resume-more-all" class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreAllHandler(event)">
-			<i class="material-icons {{ .Site.Params.styles.header_color_text }}" role="presentation">expand_more</i>
-			<span for="resume-more-all" class="mdl-tooltip">Show Details</span>
+		<button class="mdl-button mdl-js-button mdl-button--icon" onClick="moreAllHandler(event)">
+			<i class="material-icons" role="presentation">expand_more</i>
 		</button>
-		<a href="/resume/print/" id="resume-print" class="mdl-button mdl-js-button mdl-button--icon">
-			<i class="material-icons {{ .Site.Params.styles.header_color_text }}" role="presentation">print</i>
-			<span for="resume-print" class="mdl-tooltip">Print</span>
-		</a>
-		<a href="/resume/text/" download="{{ .Site.Title | urlize }}.txt" id="resume-download" class="mdl-button mdl-js-button mdl-button--icon">
-			<i class="material-icons {{ .Site.Params.styles.header_color_text }}" role="presentation">file_download</i>
-			<span for="resume-download" class="mdl-tooltip">Download Text File</span>
-		</a>
+		<a href="/resume/print/" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons" role="presentation">print</i></a>
+		<a href="/resume/text/" class="mdl-button mdl-js-button mdl-button--icon" download="{{ .Site.Title | urlize }}.txt"><i class="material-icons" role="presentation">file_download</i></a>
 	</div>
 	<div class="mdl-layout__tab-bar mdl-js-ripple-effect {{ .Site.Params.styles.header_color }}">
 		{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
@@ -22,9 +15,10 @@
 		{{ end }}
 	</div>
 </header>
-{{ end }}
+{{ end -}}
 
-{{ define "main" }}
+{{ define "main" -}}
+{{ $orgTypes := .Site.Params.org_types }}
 {{ $orgs := .Site.Data.orgs }}
 {{ $positions := sort .Site.Data.positions "end_date" "desc" }}
 
@@ -32,52 +26,95 @@
 {{ range sort $positions "end_date" }}
 	{{ $.Scratch.SetInMap "orgMap" .org (dict "id" .org "end_date" .end_date) }}
 {{ end }}
-{{ $sortedOrgs := sort ($.Scratch.GetSortedMapValues "orgMap") "end_date" "desc" }}
-{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
-<section class="mdl-layout__tab-panel{{ if eq $orgTypeKey "10" }} is-active{{ end }}" id="scroll-tab-{{ $orgTypeKey }}">
-	{{ range $sortedOrgs }}
-	{{ $orgKey := .id }}
-	{{ $org := index $orgs $orgKey }}
-	{{ if eq $org.org_type $orgTypeKey }}
-	<section class="resume-org mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-		<div class="mdl-card mdl-cell mdl-cell--12-col">
-			<div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-				<div class="resume-title">
-					<div class="mdl-typography--headline">{{ $org.name }}</div>
-					<div class="resume-location mdl-typography--subhead">{{ $org.location }}</div>
-				</div>
-				{{ range $positions }}
-				{{ if eq .org $orgKey }}
-				<div class="resume-position mdl-cell mdl-cell--12-col">
-					<div class="resume-title">
-						<div class="mdl-typography--subhead">{{ .title }}</div>
-						<div>
-							<div class="mdl-typography--body-1">{{ partial "dates" . }}</div>
-						</div>
-					</div>
-					{{ with .overview }}<span class="mdl-typography--body-1">{{ . }}</span>{{ end }}
-					{{ with .accomplishments }}
-					<button class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreHandler(event)">
-						<i class="material-icons mdl-color-text--accent" role="presentation">expand_more</i>
-					</button>
-					<ul>
-						{{ range . }}
-						<li class="resume-hidden">{{ . }}</li>
-						{{ end }}
-					</ul>
-					{{ end }}
-				</div>
-				{{ end }}
-				{{ end }}
-			</div>
-		</div>
-	</section>
-	{{ end }}
-	{{ end }}
-</section>
+
+{{/* This nightmare waste of time is to be able to print links to previous and next resume sections */}}
+{{ $.Scratch.Set "counter" 0 }}
+{{ range $okey, $oval := .Site.Params.org_types }}
+	{{ $index := ($.Scratch.Get "counter") }}
+	{{ $.Scratch.SetInMap "orgTypeKeys" (printf "%s" (print "a" $index)) $okey }}
+	{{ $.Scratch.Add "counter" 1 }}
+{{ end }}
+{{ $orgTypeKeys := $.Scratch.GetSortedMapValues "orgTypeKeys" }}
+{{ range $index, $okey := $orgTypeKeys }}
+{{ $prevOrgTypeKey := (index $orgTypeKeys (sub $index 1)) }}
+{{ $nextOrgTypeKey := (index $orgTypeKeys (add $index 1)) }}
+{{ if eq $index 0 }}
+{{ $.Scratch.SetInMap "resPrevNext" $okey (dict "next" (dict "text" (index $orgTypes $nextOrgTypeKey) "href" (printf "%s" ( print "#scroll-tab-" $nextOrgTypeKey)))) }}
+{{ else }}
+{{ if eq $index (sub (len $orgTypeKeys) 1) }}
+{{ $.Scratch.SetInMap "resPrevNext" $okey (dict "prev" (dict "text" (index $orgTypes $prevOrgTypeKey) "href" (printf "%s" ( print "#scroll-tab-" $prevOrgTypeKey)))) }}
+{{ else }}
+{{ $.Scratch.SetInMap "resPrevNext" $okey (dict "prev" (dict "text" (index $orgTypes $prevOrgTypeKey) "href" (printf "%s" ( print "#scroll-tab-" $prevOrgTypeKey))) "next" (dict "text" (index $orgTypes $nextOrgTypeKey) "href" (printf "%s" ( print "#scroll-tab-" $nextOrgTypeKey)))) }}
+{{ end }}
 {{ end }}
 {{ end }}
 
+{{- $sortedOrgs := sort ($.Scratch.GetSortedMapValues "orgMap") "end_date" "desc" -}}
+{{ $.Scratch.Set "counter" 0 }}
+	{{ range $orgTypeKey, $orgTypeValue := .Site.Params.org_types }}
+	<section class="mdl-layout__tab-panel{{ if eq $orgTypeKey "10" }} is-active{{ end }}" id="scroll-tab-{{ $orgTypeKey }}">
+		<div class="resume-org-type mdl-shadow--2dp">
+		<h5>{{ $orgTypeValue }}</h5>
+		{{- range $sortedOrgs -}}
+		{{ $orgKey := .id }}
+		{{ $org := index $orgs $orgKey }}
+		{{ if eq $org.org_type $orgTypeKey }}
+		<div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+			<div class="resume-title">
+				<div class="mdl-typography--headline">{{ $org.name }}</div>
+				<div class="resume-location mdl-typography--subhead">{{ $org.location }}</div>
+			</div>
+			{{- range $positions -}}
+			{{ if eq .org $orgKey }}
+			<div class="resume-position mdl-cell mdl-cell--12-col">
+				<div class="resume-title">
+					<div class="mdl-typography--subhead">{{ .title }}</div>
+					<div class="mdl-typography--body-1">{{ partial "dates" . }}</div>
+				</div>
+				{{ if isset . "overview" }}
+				<p class="mdl-typography--body-1">
+				{{ .overview }}
+				{{ if isset . "accomplishments" }}
+				<button class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreHandler(event)"> <i class="material-icons" role="presentation">expand_more</i></button>
+				{{ end }}
+				</p>
+				{{ end }}
+				{{- with .accomplishments -}}
+				<ul>
+					{{- range . -}}
+					<li class="resume-hidden">{{ . }}</li>
+					{{- end -}}
+				</ul>
+				{{- end -}}
+			</div>
+			{{- end -}}
+			{{ end }}
+		</div>
+		{{- end -}}{{/*if $orgTypeKey */}}
+		{{ end }}{{/* range $sortedOrgs */}}
+		{{ $prevnext := index ($.Scratch.GetSortedMapValues "resPrevNext") ($.Scratch.Get "counter") }}
+		{{ with $prevnext }}
+		<div class="resume-spacer"></div>
+		<div class="resume__prev-next">
+			{{- with .prev -}}
+			<a href="{{ .href }}" onclick="prevNextHandler(event)" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+				<i class="material-icons">keyboard_arrow_left</i><span>{{ .text }}</span>
+			</a>
+			{{- end -}}
+			<div></div>
+			{{- with .next }}
+			<a href="{{ .href }}" onclick="prevNextHandler(event)" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+				<span>{{ .text }}</span><i class="material-icons">keyboard_arrow_right</i>
+			</a>
+			{{- end -}}
+		</div>
+		{{- end -}}
+		{{ $.Scratch.Add "counter" 1}}
+		</div>
+	</section>
+	{{ end }}{{/* range $orgTypeKey, $orgTypeValue */}}
+{{ end }}
+
 {{ define "footer" }}
-<script src="/js/resume-transpiled.js"></script>
+<script src="/js/resume.js"></script>
 {{ end }}

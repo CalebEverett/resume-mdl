@@ -4,7 +4,7 @@ start_date = "1994-11-01"
 end_date   = "1995-05-30"
 
 overview = """
-Advised entrepreneurs in feasibility analysis, business plan preparation, financial analysis, strategy and market research.
+Advised entrepreneurs on feasibility analysis, business plan preparation, financial analysis, strategy and market research.
 """
 
 skills = [

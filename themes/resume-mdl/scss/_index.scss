@@ -1,0 +1,24 @@
+div.resume-content div.resume-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include card-margin();
+    div.resume-home__avatar-container {
+        width: calc(100% - 32px);
+        display: flex;
+        padding: 16px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        img {
+            border-radius: 50%;
+            max-height: 165px;
+            max-width: 165px;
+
+        }
+    }
+    div.resume-home__welcome {
+        max-width: $resume-max-content-width;
+        padding: 16px;
+    }
+}

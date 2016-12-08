@@ -1,7 +1,7 @@
 org        = "cse"
 title      = "Managing Partner"
-start_date = "2010-02-01"
-end_date   = "2007-01-01"
+end_date   = "2010-02-01"
+start_date = "2007-01-01"
 
 skills = [
 "Investment Analysis",
@@ -10,11 +10,6 @@ skills = [
 ]
 
 overview = """
-Established lower middle market private equity investment firm.
+Established lower middle market private equity investment firm, Evaluated over 50 investment opportunities and executed five letters of intent.
 """
-
-[accomplishments]
-10 = "Evaluated over 50 investment opportunities and executed five letters of intent."
-20 = "Partnered with established middle market private equity funds on four potential transactions with enterprise values of $50 to $200 million."
-
 

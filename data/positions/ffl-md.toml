@@ -1,5 +1,5 @@
 org        = "ffl"
-title      = "Associate, Vice President, Managing Director"
+title      = "Managing Director, Vice President, Associate"
 start_date = "1999-01-01"
 end_date   = "2005-09-30"
 
@@ -16,7 +16,7 @@ Contributed to the successful investment and realization of $335 million Fund I.
 """
 
 [accomplishments]
-10 = "Led the execution of two of eight investments, including the largest of the fund, $55 million in Chief Manufacturing, a manufacturer and marketer of audio-visual mounting solutions."
-20 = "Sourced two investments, including a significant add-on acquisition for Chief Manufacturing that contributed $30 million in EBITDA four years after it was acquired for $26 million."
+10 = "Led the execution of two of eight investments, including the largest of the fund, $55 million in Milestone AV Technologies, a manufacturer and marketer of audio-visual mounting solutions."
+20 = "Sourced two investments, including a $26 million add-on acquisition for Milestone that contributed $30 million in EBITDA four years after it was acquired."
 30 = "Led the financial due diligence for the most successful investment of the fund, $49 million in Tempur World, the leading provider of visco-elastic mattresses and pillows, which listed on the NYSE and produced a 9.5x cash-on-cash return over four years."
-40 = "Advised Walter Hewlett in opposition to Hewlett-Packard and Compaq Computer merger."
+40 = "Performed financial analysis for SEC filings to support Walter Hewlett's opposition of Hewlett-Packard's merger with Compaq Computer."

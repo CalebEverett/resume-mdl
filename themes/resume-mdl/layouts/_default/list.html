@@ -1,1 +1,9 @@
-<h1>Default List Template</h1>
+{{ define "main" }}
+{{ $tag := lower .Title }}
+{{ range .Data.Pages }}
+    {{ partial "summary" (dict "page" . "tag" $tag) }}
+{{ end }}
+{{ end }}
+{{ define "footer" }}
+<script src="/js/timeago.js"></script>
+{{ end }}

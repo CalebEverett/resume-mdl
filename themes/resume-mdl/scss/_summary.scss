@@ -1,0 +1,118 @@
+.resume-content article.resume-post-summary {
+    width: calc(100% - 16px);
+    margin: 7% auto;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    transition: all 150ms;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
+    }
+    &:hover > div.resume-post-summary__text > div.resume-post-summary__text-header > a.resume-post-summary__text-link {
+       opacity: 0.85;
+    }
+    @media (min-width: $resume-break-point-mobile) {
+        flex-direction: row-reverse;
+    }
+    a {
+        width: fit-content;
+        text-decoration: none;
+        color: inherit;
+        @media(max-width: $resume-break-point-mobile) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        @media (min-width: $resume-break-point-mobile) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        h2 {
+            margin: 0 0 3px 0;
+        }
+    }
+    header {
+        background-position: center center;
+        min-height: 165px;
+        min-width: 165px;
+        align-items: flex-end;
+        @media (min-width: $resume-break-point-mobile) {
+            a {
+                display: none;
+            }
+        }
+    }
+    .resume-post-summary__text {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 16px 0 16px;
+        color: inherit;
+        div.resume-post-summary__text-header {
+            display: flex;
+            flex-direction: row;
+            @media (min-width: $resume-break-point-mobile) {
+                //flex-direction: row-reverse;
+            }
+            div.resume-post-summary__text-title {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                a {
+                    display: none;
+                    @media (min-width: $resume-break-point-mobile) {
+                        display: inline;
+                    }
+                }
+            }
+            a.resume-post-summary__text-link {
+                margin-top: -40px;
+                flex-grow: 0;
+                opacity: 0.85;
+                &:hover {
+                    opacity: 1 !important;
+                }
+                @media (min-width: $resume-break-point-mobile) {
+                    transition: all 150ms;
+                    margin-right: -10px;
+                    margin-top: -10px;
+                    opacity: 0;
+                }
+            }
+
+        }
+        p {
+            margin-top: 0px;
+            margin-bottom: 0;
+            padding-bottom: 7px;
+            flex: 1;
+            @media (min-width: $resume-break-point-mobile) {
+                //padding-left: 60px;
+            }
+        }
+        .resume-article__tags {
+            padding: 7px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            margin: 0 -16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            div {
+                flex: 1;
+                padding: 0 16px;
+            }
+        }
+    }
+}
+.resume-i-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 7px;
+    margin-bottom: 6px;
+    i {
+        margin-right: 2px;
+    }
+}
+

@@ -1,67 +1,98 @@
-baseurl                   = "http://r.calebeverett.io"
-languageCode              = "en-us"
-title                     = "Caleb Everett"
-theme                     = "resume-mdl"
-pluralizelisttitles       = false
+baseurl               = "https://calebeverett.io"
+languageCode          = "en-us"
+title                 = "Caleb Everett"
+theme                 = "resume-mdl"
+pluralizelisttitles   = false
 
 [taxonomies]
-	tag                   = "tags"
-	skill                 = "skills"
+tag                   = "tags"
+skill                 = "skills"
 
 [[menu.main]]
-	name                  = "Home"
-	pre                   = "home"
-	url                   = "/"
-	weight                = 10
+name                  = "Home"
+pre                   = "home"
+url                   = "/"
+weight                = 10
 [[menu.main]]
-	name                  = "Resume"
-	pre                   = "work"
-	url                   = "/resume"
-	weight                = 20
+name                  = "Posts"
+pre                   = "subject"
+url                   = "/posts"
+weight                = 20
 [[menu.main]]
-	name                  = "Posts"
-	pre                   = "subject"
-	url                   = "/posts"
-	weight                = 30
+name                  = "Resume"
+pre                   = "work"
+url                   = "/resume"
+weight                = 30
+
 
 [params]
-	default_featured_img  = "default_featured_img.png"
-	email                 = "caleb@calebeverett.io"
+avatar                = "avatar.jpg"
+default_featured_img  = "default_featured_img.png"
+email                 = "mail@calebeverett.io"
+welcome = """
+#### Hello!
+
+My name is Caleb Everett and I am looking for my next big project.
+
+I've been a Managing Director of a private equity investment fund, Chief Executive Officer of a postsecondary educational institution and an interim Chief Financial Officer of a national eyewear retailer. Over the past six years I've developed a strong set of hands-on development skills. I am looking for opportunities to leverage my experience in finance, business and application development to solve complex problems and build cutting edge systems and applications.
+
+I am happy to work on a project basis, in a consulting capacity or join a team full time if the fit is good. If you’ve got a project you think I can help with, or you know of somebody who might, I’d love to [connect](mailto:mail@calebeverett.io?subject=I'd like to connect).
+
+I'm particularly interested in:
+
+- Business intelligence and data science
+- Application development
+- Mergers and acquisitions due diligence and transaction execution
+- Financial planning and analysis
+- Strategic planning
+- Startup or distressed company corporate finance and accounting
+
+Check out [Posts](/posts/) for more detailed write-ups of some of my work or my full resume [here](/resume/).
+
+Sincerely,<br>
+Caleb<br>
+[caleb@calebeverett.io](mailto:caleb@calebeverett.io?subject=I'd like to connect)
+"""
 
 [params.org_types]
-	10                    = "Experience"
-	20                    = "Education"
-	30                    = "Other"
+10                    = "Experience"
+20                    = "Education"
+30                    = "Boards"
 
 [params.social]
 # Key corresponds to css icon class name.
 # Include username in first element to display.
 # Add networks with new rows and updating fonts and stylesheet from https://icomoon.io/app/#/select.
-	facebook              = ["CalebEverett", "https://facebook.com/"]
-	github                = ["CalebEverett", "https://github.com/"]
-	googleplus            = ["CalebEverett", "https://plus.google.com/+"]
-	linkedin              = ["CalebEverett", "https://www.linkedin.com/in/"]
-	twitter               = ["CalebEverett", "https://twitter.com/"]
+facebook              = ["", "https://facebook.com/"]
+github                = ["CalebEverett", "https://github.com/"]
+googleplus            = ["", "https://plus.google.com/+"]
+linkedin              = ["CalebEverett", "https://www.linkedin.com/in/"]
+twitter               = ["", "https://twitter.com/"]
 
 [params.share]
-	facebook              = true
-	googleplus            = true
-	hackernews            = true
-	linkedin              = true
-	reddit                = true
-	twitter               = true
+facebook              = true
+googleplus            = true
+hackernews            = true
+linkedin              = true
+reddit                = true
+twitter               = true
 
 [params.styles]
 # Primary and accent colors will update cdn style sheet and take color inputs from here: ttps://getmdl.io/customize/index.html.
 # Other colors come from here: https://material.google.com/style/color.html#color-color-palette.
 # Class names can be found here: https://github.com/WebRTL/material-design-lite-rtl/blob/master/src/palette/_palette.scss.
 # Use the "mdl-color-text" classes for the "_text" variables.
-	primary_color         = "blue_grey"
-	accent_color          = "red"
-	background_color      = "mdl-color--grey-50"
-	header_color          = ""
-	header_color_text     = ""
-	nav_header_color      = "mdl-color-text--primary"
-	nav_header_color_text = ""
-	nav_color             = ""
-	nav_color_text        = "mdl-color-text--primary"
+primary_color         = "blue_grey"
+accent_color          = "indigo"
+background_color      = "mdl-color--grey-50"
+header_color          = ""
+header_color_text     = ""
+nav_header_color      = ""
+nav_header_color_text = "mdl-color-text--grey-700"
+nav_color             = ""
+nav_color_text        = "mdl-color-text--grey-600"
+chip_color            = ""
+chip_color_text       = "mdl-color-text--grey-600"
+home_avatar_color     = "mdl-color--white"
+
+

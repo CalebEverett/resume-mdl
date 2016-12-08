@@ -1,17 +1,9 @@
 'use strict';
 
-var toggleMore = function toggleMore(el) {
-    if (el.innerHTML == 'expand_more') {
-        el.innerHTML = 'expand_less';
-    } else {
-        el.innerHTML = 'expand_more';
-    }
-};
-
 var moreHandler = function moreHandler(event) {
     var parentEl = event.currentTarget.parentElement;
-    var listEls = parentEl.getElementsByTagName('li');
-    var moreIcon = event.currentTarget.getElementsByTagName('i')[0];
+    var listEls = parentEl.querySelectorAll('li');
+    var moreIcon = event.currentTarget.querySelector('i');
     var time = 0;
 
     var _loop = function _loop(i) {
@@ -24,17 +16,23 @@ var moreHandler = function moreHandler(event) {
     for (var i = listEls.length - 1; i >= 0; i--) {
         _loop(i);
     }
-    toggleMore(moreIcon);
+
+    if (moreIcon.innerHTML == 'expand_more') {
+        moreIcon.innerHTML = 'expand_less';
+    } else {
+        moreIcon.innerHTML = 'expand_more';
+    }
 };
 
 var moreAllHandler = function moreAllHandler(event) {
-    var moreAllIcon = event.currentTarget.getElementsByTagName('i')[0];
-    var moreAllTool = event.currentTarget.getElementsByTagName('span')[0];
-    var positions = document.getElementsByClassName('resume-position');
+    var menuDelay = 300;
+    var moreAllIcon = event.currentTarget.querySelector('i');
+    var moreAllText = event.currentTarget.querySelector('span');
+    var positions = document.querySelectorAll('.resume-position');
 
     var _loop2 = function _loop2(i) {
-        var items = positions[i].getElementsByTagName('li');
-        var moreIcon = positions[i].getElementsByTagName('i')[0];
+        var items = positions[i].querySelectorAll('li');
+        var moreIcon = positions[i].querySelector('i');
         var time = 0;
 
         if (moreAllIcon.innerHTML == 'expand_more') {
@@ -67,10 +65,14 @@ var moreAllHandler = function moreAllHandler(event) {
     for (var i = positions.length - 1; i >= 0; i--) {
         _loop2(i);
     }
-    toggleMore(moreAllIcon);
-    if (moreAllIcon.innerHTML == 'expand_more') {
-        moreAllTool.innerHTML = 'Show Details';
-    } else {
-        moreAllTool.innerHTML = 'Hide Details';
-    }
+
+    setTimeout(function () {
+        if (moreAllIcon.innerHTML == 'expand_less') {
+            moreAllIcon.innerHTML = 'expand_more';
+            moreAllText.innerHTML = 'Show Details';
+        } else {
+            moreAllIcon.innerHTML = 'expand_less';
+            moreAllText.innerHTML = 'Hide Details';
+        }
+    }, menuDelay);
 };

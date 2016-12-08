@@ -1,15 +1,15 @@
 +++
-date         = "2016-08-30"
-title        = "While I Was At It, I Did This Too"
+date         = "2016-09-01"
+title        = "Education Institution Management System"
 title_color  = "mdl-color-text--accent-contrast"
-featured_img = "default_featured_img.png"
-tags         = ["coding", "salesforce", "education", "missions", "education technology"]
+featured_img = ""
+tags         = ["salesforce", "education", "education technology"]
 +++
 # H1
 ## H2
 ### H2
 
-Once upon a time a long time ago there was a little tiny person who loved to play in the ocean. He would go to the beach to surf, skimboar and bodysurf.
+Once upon a time a long time ago there was a little tiny person who loved to play in the ocean. He would go to the beach to surf, skimboard and bodysurf.
 
 His mother would lay in the sun, tanning herself.
 
@@ -28,6 +28,9 @@ His mother would lay in the sun, tanning herself.
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
+
+**Link**
+[alt text](https://github.com/CalebEverett/studentfiles-app)
 
 ## Colors
 <div style="height: 80px; width: 250px; margin: 5px;" class="mdl-color--accent">mdl-color--accent</div>

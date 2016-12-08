@@ -15,13 +15,11 @@ skills = [
 ]
 
 overview = """
-Designed and developed all information systems to support the delivery of high quality education and services.
+Developed information system on the Force.com Platform integrated with Google Apps for Education, Edline Learning Community Management System, Hubspot Marketing Automation Software and Quickbooks to manage all aspects of the institution. Developed standalone application with Node.js, Postgresql, Linux Containers, Salesforce Lightning Design System and Amazon Web Services to provide secure online access to student records.
 """
 
 accomplishments = [
-"Designed, developed and administered end-to-end institutional management system on the Force.com platform, encompassing lead management, admissions, financial aid, student receivables, academics, student services, student records, purchasing, inventory management, career services and placement.",
-"Developed standalone web-based student records portal with Node.js and PostgreSQL. Encryption via Amazon Web Services Key Management System. Developed and deployed in Linux containers using LXD.",
-"Implemented one-to-one student computing program that provided every student with a personal laptop computer to use in school and keep upon graduation.",
-"Implemented Edline learning management system to deliver curriculum and support instruction.",
-"Implemented Google Apps for Education in order to provide students with a permanent school email address and to serve as the primary basis for faculty and staff collaboration."
+"Created custom objects, custom fields, workflows, validation rules, reports and dashboards and communications templates to support organizational processes and record keeping for lead management, admissions, financial aid, student receivables, academic scheduling, student records, student services, externships, job placement services, default management, purchasing, inventory management and external reporting.",
+"Implemented one-to-one student computing program with Chromebooks, Cisco-Meraki high speed wireless network, Windows Hyper-V Terminal Servers and automated Active Directory and Google Apps account provisioning.",
+"Designed and developed application to make student records available securely online with user authentication via Google Apps and documents individually encrypted and decrypted on demand via AWS Key Management System."
 ]

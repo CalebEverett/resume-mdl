@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	{{ block "head" . }}
+	{{- block "head" . -}}
 		{{ partial "head" . }}
-	{{ end }}
+	{{ end -}}
 	<body>
+		{{- block "layout" . -}}
 		<div class="resume-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-			{{ block "header" . }}
-				{{ partial "header" . }}
-			{{ end }}
+			{{- block "header" . -}}
+			<header class="resume-header mdl-layout__header {{ .Site.Params.styles.header_color }} {{ .Site.Params.styles.header_color_text }}">
+				<div class="mdl-layout__header-row">
+					<span class="mdl-layout-title">{{ .Title }}</span>
+				</div>
+			</header>
+			{{ end -}}
 			{{ partial "nav-drawer" . }}
-			<main class="mdl-layout__content {{ .Site.Params.styles.background_color }}">
-			<div class="mdl-grid resume-content">
-			{{ block "main" . }}
-			{{ end }}
+			<main class="mdl-layout__content{{ with .Site.Params.styles.background_color }} {{ . }}{{ end }}">
+			<div class="resume-content">
+			{{- block "main" . -}}
+			{{- end -}}
 			</div>
 			</main>
 		</div>
+		{{- end -}}
 	</body>
 	<script src="https://code.getmdl.io/1.2.0/material.min.js"></script>
-	{{ block "footer" . }}
-	{{ end }}
+	{{- block "footer" . -}}
+	{{- end -}}
 </html>
