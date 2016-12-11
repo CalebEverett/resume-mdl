@@ -2,11 +2,13 @@ baseurl               = "https://calebeverett.io"
 languageCode          = "en-us"
 title                 = "Caleb Everett"
 theme                 = "resume-mdl"
-pluralizelisttitles   = false
+pluralizelisttitles   = false   # http://pygments.org/docs/formatters/#HtmlFormatter
+pygmentsuseclasses    = true
+pygmentsstyle         = "manni" #['algol', 'algol_nu', 'autumn', 'borland', 'bw', 'colorful', 'default', 'emacs', 'friendly', 'fruity', 'igor', 'lovelace', 'manni', 'monokai', 'murphy', 'native', 'paraiso-dark', 'paraiso-light', 'pastie', 'perldoc', 'rrt', 'tango', 'trac', 'vim', 'vs', 'xcode']
+PymentsCodeFences     = true
 
 [taxonomies]
 tag                   = "tags"
-skill                 = "skills"
 
 [[menu.main]]
 name                  = "Home"
@@ -27,25 +29,27 @@ weight                = 30
 
 [params]
 avatar                = "avatar.jpg"
-default_featured_img  = "default_featured_img.png"
+default_featured_img  = "/images/default_featured_img.png"
+google_analytics_id   = "UA-80388935-2"
 email                 = "mail@calebeverett.io"
 welcome = """
-#### Hello!
+#### Hello,
 
-My name is Caleb Everett and I am looking for my next big project.
+Thanks for visiting. I'm looking for my next big project, having recenlty wrapped up a six year effort to build a postsecondary vocational school in Santa Ana, California. I have a broad set of financial I spent the ten years prior to that investing in middle market companies.
 
 I've been a Managing Director of a private equity investment fund, Chief Executive Officer of a postsecondary educational institution and an interim Chief Financial Officer of a national eyewear retailer. Over the past six years I've developed a strong set of hands-on development skills. I am looking for opportunities to leverage my experience in finance, business and application development to solve complex problems and build cutting edge systems and applications.
 
-I am happy to work on a project basis, in a consulting capacity or join a team full time if the fit is good. If you’ve got a project you think I can help with, or you know of somebody who might, I’d love to [connect](mailto:mail@calebeverett.io?subject=I'd like to connect).
+I am happy to work on a project basis, in a consulting capacity or join a team full time if the fit is good.
 
-I'm particularly interested in:
+I'm particularly interested in projects involving:
 
+- Education
 - Business intelligence and data science
 - Application development
-- Mergers and acquisitions due diligence and transaction execution
-- Financial planning and analysis
+- Startups
+- Acquisitions
+- Financial analysis
 - Strategic planning
-- Startup or distressed company corporate finance and accounting
 
 Check out [Posts](/posts/) for more detailed write-ups of some of my work or my full resume [here](/resume/).
 

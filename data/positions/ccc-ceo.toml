@@ -1,7 +1,7 @@
 org        = "ccc"
 title      = "Chief Executive Officer"
 start_date = "2010-02-01"
-end_date   = "2016-03-31"
+end_date   = "2016-06-30"
 
 skills = [
 "Business Process Analysis",

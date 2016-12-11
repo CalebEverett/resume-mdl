@@ -1,1 +1,1 @@
-https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title }}&summary={{ slicestr .Summary 0 256 }}&source={{ .Site.Title | urlize }}
+https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title }}&summary={{if gt (len .Summary) 265}}{{ slicestr .Summary 0 256 }}{{ else }}{{ .Summary }}{{ end }}&source={{ .Site.Title | urlize }}

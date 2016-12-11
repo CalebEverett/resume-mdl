@@ -1,26 +1,102 @@
 //Variables
-$resume-nav-drawer-width: 245;
+$resume-nav-drawer-width: 245px;
 $resume-max-content-width: 650px;
 $resume-break-point-mobile: 700px;
 $resume-max-card-width: 860px;
 $resume-nav-drawer-width-fixed: 1025px;
 
 // Mixins
-@mixin card-margin() {
-    @media (min-width: $resume-max-card-width) {
-        @media (max-width: ($resume-nav-drawer-width-fixed)) {
-            margin: 7% auto;
-            h5 {
-                display: block;
-            }
-            min-height: calc(100vh - 264px);
-        }
-        @media (min-width: ($resume-max-card-width + $resume-nav-drawer-width)) {
-            margin: 7% auto;
-            h5 {
-                display: block;
-            }
-            min-height: calc(100vh - 264px);
+
+// This mixin handles the margins on the main article card, which is used on the home page
+// (index.html and scss/_index.scss), the single post page (_default/single.html and scss/_single.scss),
+// and resume (section/resume.html and _resume.scss) to achieve a full screen look on smaller screens
+// and a card like look on larger screens, adjusting for the fixed nav bar at widths greater than
+// $resume-nav-drawer-width-fixed.
+@mixin card-margin($minh0, $minh1, $minh2, $minh3) {
+    min-height: calc(#{"100vh - #{$minh0}"});
+    @media (min-width: $resume-max-card-width) and (max-width: $resume-nav-drawer-width-fixed) {
+        margin: 7% auto;
+        min-height: calc(#{"100vh - #{$minh1}"});
+        h5 {
+            display: block;
         }
     }
+    @media (min-width: $resume-nav-drawer-width-fixed) and (max-width: $resume-max-card-width + $resume-nav-drawer-width) {
+        min-height: calc(#{"100vh - #{$minh2}"});
+    }
+    @media (min-width: $resume-max-card-width + $resume-nav-drawer-width) {
+        margin: 7% auto;
+        min-height: calc(#{"100vh - #{$minh3}"});
+        h5 {
+            display: block;
+        }
+    }
+}
+
+// Global Styles
+html {
+    box-sizing: border-box;
+}
+.resume-layout {
+    min-height: 100vh;
+}
+.resume-content {
+    width: 100%;
+    max-width: $resume-max-card-width;
+    margin: auto;
+}
+.mdl-chip {
+    line-height: 24px;
+    height: 24px;
+    margin: 5px auto;
+    opacity: 0.75;
+    transition: all 150ms;
+    &:hover {
+        opacity: 1;
+    }
+}
+.mdl-chip__contact {
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    font-size: 13px;
+}
+.mdl-layout__tab-bar-button {
+    background-color: inherit;
+}
+.mdl-layout__header .mdl-layout__drawer-button {
+    color: inherit;
+    padding: -8px;
+}
+.resume__prev-next {
+    width: calc(100% - 20px);
+    margin: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    a {
+        height: 100%;
+        flex-grow: 0;
+        display: flex;
+        align-items: center;
+    }
+    div {
+        flex-grow: 1;
+    }
+}
+.resume-spacer {
+    flex-grow: 1;
+}
+.resume-hidden {
+    max-height: 0px;
+    opacity: 0;
+    margin-bottom: 0 !important;
+}
+// https://github.com/google/material-design-lite/issues/4015
+.mdl-layout__header--waterfall {
+    overflow: visible;
+}
+.mdl-layout__header--waterfall.is-compact {
+    overflow: hidden;
 }

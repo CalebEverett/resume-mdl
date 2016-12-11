@@ -3,7 +3,9 @@ date = "2016-06-21"
 title = "This is Some of My Best Work"
 title_color = "mdl-color-text--accent-contrast"
 featured_img = ""
+featured_img_pos = "center"
 tags = ["coding", "salesforce", "education", "missions", "education technology",]
+draft = true
 +++
 # H1
 ## H2

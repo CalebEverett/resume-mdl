@@ -2,8 +2,9 @@
 date = "2016-08-21"
 title = "How to Do Some Really Awesome Shnizzle"
 title_color = "mdl-color-text--accent-contrast"
-featured_img = "default_featured_img.png"
+featured_img = "/images/default_featured_img.png"
 tags = ["coding", "salesforce", "education", "missions", "education technology",]
+draft = true
 +++
 # H1
 ## H2

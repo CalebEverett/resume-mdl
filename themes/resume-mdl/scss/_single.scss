@@ -9,14 +9,13 @@ header.resume-post-header{
     display: flex;
     flex-direction: column;
     align-items: center;
-	@include card-margin();
+    @include card-margin(56px, 172px, 0px, 120px);
     .mdl-card__title {
         width: 100%;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
         min-height: 300px;
-        background-position: center;
         h2 {
             margin: 0;
         }
@@ -27,7 +26,7 @@ header.resume-post-header{
         flex-flow: row wrap;
         line-height: 32px;
         div:not(.resume-spacer), button {
-			flex-grow: 0;
+            flex-grow: 0;
             display: flex;
             align-items: center;
             margin-right: 6px;
@@ -36,26 +35,25 @@ header.resume-post-header{
                 margin-right: 3px;
             }
         }
-		div.resume-spacer {
-			flex-grow: 1;
-		}
-		ul {
-			a {
-				color: initial;
-			}
-			li.share-email {
-				display: flex;
-				justify-content: center;
-				a {
-					text-decoration: none;
-					display: flex;
-					align-items: center;
+        div.resume-spacer {
+            flex-grow: 1;
+        }
+        ul {
+            a {
+                color: initial;
+            }
+            li.share-email {
+                display: flex;
+                justify-content: center;
+                a {
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                }
+            }
 
-				}
-			}
-
-		}
-	}
+        }
+    }
     .resume-article__tags {
         width: calc(100% - 32px);
     }
@@ -72,5 +70,5 @@ header.resume-post-header{
     transform: translate(-12px,-12px);
     line-height: 24px;
     width: 24px;
-	vertical-align: middle;
+    vertical-align: middle;
 }

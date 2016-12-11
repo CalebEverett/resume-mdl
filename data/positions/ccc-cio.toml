@@ -1,7 +1,7 @@
 org        = "ccc"
 title      = "Chief Information Officer"
 start_date = "2010-02-01"
-end_date   = "2016-03-30"
+end_date   = "2016-06-29"
 
 skills = [
 "Application Development",

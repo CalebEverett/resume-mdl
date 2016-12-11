@@ -1,21 +1,16 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/spf13/hugoThemes#themetoml for an example
 
-name = "Resume Mdl"
+name = "Resume mdl"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://siteforthistheme.com/"
-tags = ["", ""]
-features = ["", ""]
+licenselink = "https://github.com/CalebEverett/resume-mdl/blob/master/LICENSE.md"
+description = "A mobile first material design blog and resume theme"
+homepage = "http://CalebEverett.github.io/resume-mdl"
+tags = ["blog", "resume", "material design"]
+features = ["blog", "resume", "responsive"]
 min_version = 0.15
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Caleb Everett"
+  homepage = "https://calebeverett.io"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""

@@ -1,0 +1,28 @@
+@import './highlight/manni';
+.highlighttable {
+    background: whitesmoke;
+    table-layout: fixed;
+    width: 100%;
+    font-size: 90%;
+    tbody {
+        tr {
+            vertical-align: top;
+            .linenos {
+                width: 24px;
+                text-align: right;
+                padding-top: 1px;
+                opacity: 0.3;
+            }
+            .code {
+                padding-left: 8px;
+                overflow-x: auto;
+            }
+        }
+
+    }
+}
+p code {
+    background-color: whitesmoke;
+    padding: 3px;
+    box-shadow: 3px;
+}
