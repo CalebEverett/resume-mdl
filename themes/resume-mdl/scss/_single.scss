@@ -60,6 +60,40 @@ header.resume-post-header{
     .mdl-card__supporting-text {
         color: initial;
         max-width: $resume-max-content-width;
+        ul {
+            overflow: hidden;
+        }
+        figure {
+            overflow: hidden;
+            margin: 0;
+            img {
+                width: 100%;
+            }
+            @media (min-width: $resume-nav-drawer-width-fixed) {
+                &.resume-left {
+                    width: 50%;
+                    float: left;
+                    margin-right: 16px;
+                }
+                &.resume-right {
+                    width: 50%;
+                    float: right;
+                    margin-left: 16px;
+                    p {
+                        text-align: right;
+                    }
+                }
+                &.resume-center {
+                    width: 67%;
+                    margin: auto;
+                    p {
+                        text-align: center;
+                    }
+                }
+
+
+            }
+        }
     }
 }
 [class*="icon-"] {

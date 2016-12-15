@@ -326,6 +326,29 @@ div.resume-content section.mdl-layout__tab-panel {
   .resume-content article.resume-post .mdl-card__supporting-text {
     color: initial;
     max-width: 650px; }
+    .resume-content article.resume-post .mdl-card__supporting-text ul {
+      overflow: hidden; }
+    .resume-content article.resume-post .mdl-card__supporting-text figure {
+      overflow: hidden;
+      margin: 0; }
+      .resume-content article.resume-post .mdl-card__supporting-text figure img {
+        width: 100%; }
+      @media (min-width: 1025px) {
+        .resume-content article.resume-post .mdl-card__supporting-text figure.resume-left {
+          width: 50%;
+          float: left;
+          margin-right: 16px; }
+        .resume-content article.resume-post .mdl-card__supporting-text figure.resume-right {
+          width: 50%;
+          float: right;
+          margin-left: 16px; }
+          .resume-content article.resume-post .mdl-card__supporting-text figure.resume-right p {
+            text-align: right; }
+        .resume-content article.resume-post .mdl-card__supporting-text figure.resume-center {
+          width: 67%;
+          margin: auto; }
+          .resume-content article.resume-post .mdl-card__supporting-text figure.resume-center p {
+            text-align: center; } }
 
 [class*="icon-"] {
   position: absolute;

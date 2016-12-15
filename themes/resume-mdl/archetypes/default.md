@@ -2,7 +2,7 @@
 tags             = ["resume-mdl", "new"]
 title_color      = "mdl-color-text--accent-contrast"
 [featured_img]
-src              = ""
+url              = ""
 pos              = ""
 size             = ""
 repeat           = ""

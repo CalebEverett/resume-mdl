@@ -4,7 +4,7 @@ tags             = ["resume-mdl", "new"]
 title            = "Envelop Encryption with AWS Key Management"
 title_color      = "mdl-color-text--accent-contrast"
 [featured_img]
-src              = "/images/lairdhamilton6.jpg"
+url              = "/images/lairdhamilton6.jpg"
 pos              = "85% bottom"
 size             = "cover"
 repeat           = "no-repeat"
@@ -15,9 +15,9 @@ repeat           = "no-repeat"
 
 [Envelope encryption](http://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html#envelope) is a multi-step process that utilizes two encryption keys, a master key and a data key. The master key is used with a unique identifier to obtain the data key. The data key is used to encrypt the data and then itself is encrypted using the master key and then stored along side the encrypted data and unique identifier. To decrypt encrypted data, the encrypted data key is decrypted using the master key and unique identifier and then used to decrypt the encrypted data.
 
-{{< figure src="/images/lairdhamilton6.jpg" class="large" >}}
-
 A nice feature of using the [AWS Key Management Service](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html) (KMS) is that the master key never leaves AWS. It is accessed via api according to configured permissions. KMS operates as a simple endpoint that either delivers a new data key or decrypts an encrypted one as long as the correct unique identifier is provided.
+
+{{< figure src="/images/lairdhamilton6.jpg" class="resume-center" caption="This is some awesome shnizzle!">}}
 
 ### Module
 This module was developed as part of an application to provide secure online access to student records. It is used to encrypt files before storing them in a database and to decrypt them before they are downloaded by authorized users.
@@ -26,6 +26,7 @@ This module was developed as part of an application to provide secure online acc
 - Written with Promises and ES6 syntax, the code is straightforward and easy to understand.
 - Uses the [AES-256-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm, which is state of the art in terms of security and performance.
 - The encrypted data key, unique identifier and initialization vector required by the AES-256-GCM algorithm are combined with the encrypted data into a single buffer, providing an extra eleement of security and convenience.
+
 
 #### Setup
 An account at AWS is required. Here is more information on [KMS](https://aws.amazon.com/documentation/kms/) and the [KMS SDK](http://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html). Below are the required modules.
