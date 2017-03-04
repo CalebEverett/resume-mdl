@@ -58,10 +58,16 @@ div.resume-content section.mdl-layout__tab-panel {
                     text-align: justify;
                     margin-bottom: 6px;
                 }
-                button.resume-more i {
-                    font-size: 20px;
+                button.resume-more {
+                    height: 24px;
+                    width: 24px;
+                    min-width: 24px;
+                    i {
+                        font-size: 20px;
+                    }
+
                 }
-                ul {
+                    ul {
                     margin: 4px 0px 4px 0px;
                     li {
                         text-align: justify;

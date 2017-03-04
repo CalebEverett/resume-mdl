@@ -1,14 +1,15 @@
 +++
 date             = "2016-12-08"
-featured_img     = ""
-featured_img_pos = ""
 tags             = ["code", "encryption", "AWS"]
 title            = "Envelope Encryption with AWS Key Management"
-title_color      = "mdl-color-text--accent-contrast"
-
+title_color      = "black"
+[featured_img]
+url = "/images/envelope.png"
+pos = "center"
+repeat = ""
+size_single = "auto 70%"
+size_summary = "90%"
 +++
-
-### Envelope encryption
 
 [Envelope encryption](http://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/introduction.html#envelope) is a multi-step process that utilizes two encryption keys, a master key and a data key. The master key is used with a unique identifier to obtain the data key. The data key is used to encrypt the data and then itself is encrypted using the master key and then stored along side the encrypted data and unique identifier. To decrypt encrypted data, the encrypted data key is decrypted using the master key and unique identifier and then used to decrypt the encrypted data.
 

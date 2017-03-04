@@ -13,9 +13,9 @@ header.resume-post-header{
     .mdl-card__title {
         width: 100%;
         flex-direction: column;
-        justify-content: space-between;
         align-items: flex-start;
         min-height: 300px;
+        flex-wrap: wrap;
         h2 {
             margin: 0;
         }
@@ -105,4 +105,13 @@ header.resume-post-header{
     line-height: 24px;
     width: 24px;
     vertical-align: middle;
+}
+.resume-mdl-bordered-table {
+    table, th, td {
+        border: 1px solid grey;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+    }
 }

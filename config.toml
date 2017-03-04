@@ -33,29 +33,15 @@ default_featured_img  = "/images/default_featured_img.png"
 google_analytics_id   = "UA-80388935-2"
 email                 = "mail@calebeverett.io"
 welcome = """
-#### Hello,
+I'm looking for an opportunity to develop cutting edge applications that solve complex problems in a hands-on capacity that leverages my deep financial expertise, exceptional analytical capabilities and strong and rapidly growing technical skills.
 
-Thanks for visiting. I'm looking for my next big project, having recenlty wrapped up a six year effort to build a postsecondary vocational school in Santa Ana, California. I have a broad set of financial I spent the ten years prior to that investing in middle market companies.
-
-I've been a Managing Director of a private equity investment fund, Chief Executive Officer of a postsecondary educational institution and an interim Chief Financial Officer of a national eyewear retailer. Over the past six years I've developed a strong set of hands-on development skills. I am looking for opportunities to leverage my experience in finance, business and application development to solve complex problems and build cutting edge systems and applications.
-
-I am happy to work on a project basis, in a consulting capacity or join a team full time if the fit is good.
-
-I'm particularly interested in projects involving:
-
-- Education
-- Business intelligence and data science
-- Application development
-- Startups
-- Acquisitions
-- Financial analysis
-- Strategic planning
-
-Check out [Posts](/posts/) for more detailed write-ups of some of my work or my full resume [here](/resume/).
-
-Sincerely,<br>
-Caleb<br>
-[caleb@calebeverett.io](mailto:caleb@calebeverett.io?subject=I'd like to connect)
+##### Highlights
+* Studied quantitative marketing research at The Wharton School of the University of Pennsylvania
+* Top tier analyst in the Mergers and Acquisitions department at Morgan Stanley
+* First outside third-year analyst hired into Blackstone's Corporate Principal Group
+* Promoted from Associate to Partner in three years at FFL Partners
+* Built a vocational school from the ground up with over 80% completion and job placement rates
+* Learned how to developed applications using Python, Data Science and Machine Learning, Node.js, Javascript, HTML, CSS, Linux, LXD, Docker and Amazon Web Services through self-directed learning and online courses
 """
 
 [params.org_types]

@@ -3,6 +3,7 @@ date             = "2016-12-08T23:18:42Z"
 tags             = ["resume-mdl", "new"]
 title            = "Envelop Encryption with AWS Key Management"
 title_color      = "mdl-color-text--accent-contrast"
+draft            = true
 [featured_img]
 url              = "/images/lairdhamilton6.jpg"
 pos              = "85% bottom"
@@ -17,7 +18,7 @@ repeat           = "no-repeat"
 
 A nice feature of using the [AWS Key Management Service](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html) (KMS) is that the master key never leaves AWS. It is accessed via api according to configured permissions. KMS operates as a simple endpoint that either delivers a new data key or decrypts an encrypted one as long as the correct unique identifier is provided.
 
-{{< figure src="/images/lairdhamilton6.jpg" class="resume-center" caption="This is some awesome shnizzle!">}}
+{{< figure src="/images/lairdhamilton6.jpg" caption="This is some awesome shnizzle!">}}
 
 ### Module
 This module was developed as part of an application to provide secure online access to student records. It is used to encrypt files before storing them in a database and to decrypt them before they are downloaded by authorized users.

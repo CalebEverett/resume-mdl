@@ -73,7 +73,7 @@
 				</div>
 				{{ if isset . "overview" }}
 				<p class="mdl-typography--body-1">
-				{{ .overview }}
+				{{ .overview | markdownify }}
 				{{ if isset . "accomplishments" }}
 				<button class="resume-more mdl-button mdl-js-button mdl-button--icon" onclick="moreHandler(event)"> <i class="material-icons" role="presentation">expand_more</i></button>
 				{{ end }}
@@ -82,7 +82,7 @@
 				{{- with .accomplishments -}}
 				<ul>
 					{{- range . -}}
-					<li class="resume-hidden">{{ . }}</li>
+					<li class="resume-hidden">{{ . | markdownify }}</li>
 					{{- end -}}
 				</ul>
 				{{- end -}}

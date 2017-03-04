@@ -1,17 +1,21 @@
 +++
-featured_img = ""
-featured_img_pos = "center"
+date = "2016-12-09T21:11:42Z"
+title = "Resume MDL - Hugo Theme"
 tags = [
   "resume-mdl",
   "new",
 ]
 title_color = "mdl-color-text--accent-contrast"
-date = "2016-12-09T21:11:42Z"
-title = "Resume MDL - Hugo Theme"
-
+draft = true
 +++
 
-### Syntax highlighting
+### Images
+Resume-mdl provides some built-in styling for featured images as well as for images included in the body of a post.
+
+#### Featured Images
+A featured image can be specified in the front matter of a post by setting a value for `featured_img.url`. If not value is set, the featured image area will default to the 
+
+### Syntax Highlighting
 Syntax highlight is done with [Pygments](http://pygments.org/). Installation instructions can be found [here](https://gohugo.io/extras/highlighting/#pygments) in the Hugo documentation.
 
 To generate highlighted code, you can either use the built in Hugo `highlight` shortcode or you can use Github style backticks. Pygments either generates inline css styles or adds classes to your markup when it outputs html. Resume-mdl uses the classes approach, which requires a stylesheet. Resume-mdl uses the , which you can get on [github](https://github.com/richleland/pygments-css) or in Python wherever Pygments is installed as follows:

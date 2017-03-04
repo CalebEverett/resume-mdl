@@ -1,0 +1,22 @@
+org        = "dsc"
+title      = "Developer"
+start_date = "2016-07-01"
+
+skills = [
+"Business Process Analysis",
+"Education Administration",
+"Management",
+"Systems Development",
+]
+
+overview = """
+Developed applications, machine learning algorithms and predictive models for clients in the education, financial services and retail industries utilizing Python, Node.js, Amazon Web Services, LXD, Postgres and other open source libraries. Acquired programming, data science, machine-learning, database and system administration skills through self-directed learning and online courses.
+"""
+
+accomplishments = [
+"Migrated data from Salesforce based student information system to Postgres database and developed standalone Node.js application to provide secure online access to student records with passwordless authentication via Google Apps and json web tokens and individual documents encrypted and decrypted on demand via AWS Key Management Service.",
+"Implemented stochastic gradient descent algorithms as a Python module for New York based hedge fund, including accompanying exploratory notebook.",
+"Developed model to predict sales of individual items at individual stores for a chain of 190 convenience stores in the U.S. and a Dockerized Python application to perform daily predictions from live data in a Microsoft Sql database.",
+"Developed responsive, data-based resume and blog theme for Hugo static site generator with Golang templates and Google’s Material Design Lite",
+"Completed Stanford University Intro to Machine Learning course with fully vectorized solutions for all assignments and a grade of 100%. Online coursework in progress includes Convolutional Neural Networks Visual Recognition (Stanford), Reinforcement Learning (University College of London) and Introduction to Algorithms (MIT)."
+]

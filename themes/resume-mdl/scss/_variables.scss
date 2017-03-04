@@ -100,3 +100,12 @@ html {
 .mdl-layout__header--waterfall.is-compact {
     overflow: hidden;
 }
+
+// Workaround for Markdown-Mathjax conflicts
+// https://gohugo.io/tutorials/mathjax/
+
+.MathJax {
+   .mi, .mo {
+       color: black;
+   }
+}

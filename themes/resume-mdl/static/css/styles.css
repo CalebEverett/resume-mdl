@@ -60,6 +60,9 @@ html {
 .mdl-layout__header--waterfall.is-compact {
   overflow: hidden; }
 
+.MathJax .mi, .MathJax .mo {
+  color: black; }
+
 @font-face {
   font-family: 'icomoon';
   src: url("/fonts/icomoon/icomoon.eot?l706tt");
@@ -253,8 +256,12 @@ div.resume-content section.mdl-layout__tab-panel {
       div.resume-content section.mdl-layout__tab-panel div.resume-org-type .mdl-card__supporting-text .resume-position p {
         text-align: justify;
         margin-bottom: 6px; }
-      div.resume-content section.mdl-layout__tab-panel div.resume-org-type .mdl-card__supporting-text .resume-position button.resume-more i {
-        font-size: 20px; }
+      div.resume-content section.mdl-layout__tab-panel div.resume-org-type .mdl-card__supporting-text .resume-position button.resume-more {
+        height: 24px;
+        width: 24px;
+        min-width: 24px; }
+        div.resume-content section.mdl-layout__tab-panel div.resume-org-type .mdl-card__supporting-text .resume-position button.resume-more i {
+          font-size: 20px; }
       div.resume-content section.mdl-layout__tab-panel div.resume-org-type .mdl-card__supporting-text .resume-position ul {
         margin: 4px 0px 4px 0px; }
         div.resume-content section.mdl-layout__tab-panel div.resume-org-type .mdl-card__supporting-text .resume-position ul li {
@@ -292,9 +299,9 @@ div.resume-content section.mdl-layout__tab-panel {
   .resume-content article.resume-post .mdl-card__title {
     width: 100%;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
-    min-height: 300px; }
+    min-height: 300px;
+    flex-wrap: wrap; }
     .resume-content article.resume-post .mdl-card__title h2 {
       margin: 0; }
   .resume-content article.resume-post .resume-article__icons {
@@ -359,6 +366,13 @@ div.resume-content section.mdl-layout__tab-panel {
   line-height: 24px;
   width: 24px;
   vertical-align: middle; }
+
+.resume-mdl-bordered-table table, .resume-mdl-bordered-table th, .resume-mdl-bordered-table td {
+  border: 1px solid grey;
+  border-collapse: collapse; }
+
+.resume-mdl-bordered-table th, .resume-mdl-bordered-table td {
+  padding: 8px; }
 
 .resume-content article.resume-post-summary {
   width: calc(100% - 16px);

@@ -10,6 +10,7 @@
 			<button class="mdl-button mdl-js-button mdl-button--icon" onclick="window.history.back();">
 				<i class="material-icons" role="presentation">arrow_back</i>
 			</button>
+            <div class="resume-spacer"></div>
 			<h2 class="mdl-typography--display-1">{{ .Title }}</h2>
 		</div>
 		<div class="resume-article__icons mdl-typography--body-1{{ with .Site.Params.styles.nav_color_text }} {{ . }}{{ end }}">
@@ -53,4 +54,7 @@
 {{ end }}
 {{ define "footer" }}
 <script src="/js/timeago.js"></script>
+{{ if eq .Params.mathjax "true" }}
+    {{ partial "mathjax" }}
+{{ end }}
 {{ end }}
