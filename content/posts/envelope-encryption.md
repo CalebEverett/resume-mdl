@@ -1,6 +1,6 @@
 +++
 date             = "2016-12-08"
-tags             = ["code", "encryption", "AWS"]
+tags             = ["nodejs", "encryption", "AWS"]
 title            = "Envelope Encryption with AWS Key Management"
 title_color      = "black"
 [featured_img]
@@ -20,7 +20,7 @@ This module was developed as part of an application to provide secure online acc
 
 - Written with Promises and ES6 syntax, the code is straightforward and easy to understand.
 - Uses the [AES-256-GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) algorithm, which is state of the art in terms of security and performance.
-- The encrypted data key, unique identifier and initialization vector required by the AES-256-GCM algorithm are combined with the encrypted data into a single buffer, providing an extra eleement of security and convenience.
+- The encrypted data key, unique identifier and initialization vector required by the AES-256-GCM algorithm are combined with the encrypted data into a single buffer, providing an extra element of security and convenience.
 
 {{< highlight JavaScript "linenos=table" >}}
 var Promise = require("bluebird")

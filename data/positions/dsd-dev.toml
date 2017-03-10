@@ -14,9 +14,9 @@ Developed applications, machine learning algorithms and predictive models for cl
 """
 
 accomplishments = [
-"Migrated data from Salesforce based student information system to Postgres database and developed standalone Node.js application to provide secure online access to student records with passwordless authentication via Google Apps and json web tokens and individual documents encrypted and decrypted on demand via AWS Key Management Service.",
-"Implemented stochastic gradient descent algorithms as a Python module for New York based hedge fund, including accompanying exploratory notebook.",
-"Developed model to predict sales of individual items at individual stores for a chain of 190 convenience stores in the U.S. and a Dockerized Python application to perform daily predictions from live data in a Microsoft Sql database.",
-"Developed responsive, data-based resume and blog theme for Hugo static site generator with Golang templates and Google’s Material Design Lite",
-"Completed Stanford University Intro to Machine Learning course with fully vectorized solutions for all assignments and a grade of 100%. Online coursework in progress includes Convolutional Neural Networks Visual Recognition (Stanford), Reinforcement Learning (University College of London) and Introduction to Algorithms (MIT)."
+"Migrated data from Salesforce based student information system to Postgres database and developed [standalone Node.js application](https://github.com/CalebEverett/studentfiles-app) to provide secure online access to student records with passwordless authentication via Google Apps and json web tokens and individual documents encrypted and decrypted on demand via AWS Key Management Service.",
+"Implemented stochastic gradient descent algorithms as a [Python module](https://github.com/CalebEverett/pysgd) for New York based hedge fund, including accompanying exploratory [notebook](http://nbviewer.jupyter.org/github/CalebEverett/pysgd/blob/master/pysgd.ipynb).",
+"Developed [model to predict sales](http://nbviewer.jupyter.org/github/CalebEverett/store_model/blob/master/store_model.ipynb) of individual items at individual stores for a chain of 190 convenience stores in the U.S. and a Dockerized Python application to perform daily predictions from live data in a Microsoft Sql database.",
+"Developed responsive, data-based [resume and blog theme](https://calebeverett.io) for Hugo static site generator with Golang templates and Google’s Material Design Lite.",
+"[Completed](https://www.coursera.org/account/accomplishments/records/SLCXAMJH9VEV) Stanford University Intro to Machine Learning course with fully vectorized solutions for all assignments and a grade of 100%. Online coursework in progress includes Convolutional Neural Networks Visual Recognition (Stanford), Reinforcement Learning (University College of London) and Introduction to Algorithms (MIT)."
 ]

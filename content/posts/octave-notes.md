@@ -1,6 +1,6 @@
 +++
 title = "Octave Notes"
-date = "2016-12-14T19:09:11Z"
+date = "2017-01-17T19:09:11Z"
 tags = [
   "octave",
   "machine-learning",

@@ -33,7 +33,7 @@ default_featured_img  = "/images/default_featured_img.png"
 google_analytics_id   = "UA-80388935-2"
 email                 = "mail@calebeverett.io"
 welcome = """
-I'm looking for an opportunity to develop cutting edge applications that solve complex problems in a hands-on capacity that leverages my deep financial expertise, exceptional analytical capabilities and strong and rapidly growing technical skills.
+Looking for opportunities to develop cutting edge solutions to complex problems in a hands-on development capacity leveraging deep financial expertise, exceptional analytical capabilities and strong technical skills.
 
 ##### Highlights
 * Studied quantitative marketing research at The Wharton School of the University of Pennsylvania
@@ -41,7 +41,7 @@ I'm looking for an opportunity to develop cutting edge applications that solve c
 * First outside third-year analyst hired into Blackstone's Corporate Principal Group
 * Promoted from Associate to Partner in three years at FFL Partners
 * Built a vocational school from the ground up with over 80% completion and job placement rates
-* Learned how to developed applications using Python, Data Science and Machine Learning, Node.js, Javascript, HTML, CSS, Linux, LXD, Docker and Amazon Web Services through self-directed learning and online courses
+* Developing Data Science and Machine Learning applications using Python, Node.js, Javascript, HTML, CSS, Linux, LXD, Docker and Amazon Web Services
 """
 
 [params.org_types]

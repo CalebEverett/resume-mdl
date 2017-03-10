@@ -1,7 +1,7 @@
 +++
-date           = "2017-01-05T16:58:08Z"
+date           = "2017-03-05T16:58:08Z"
 title          = "pysgd"
-tags           = ["resume-mdl","new"]
+tags           = ["python","machine-learning", "gradient-descent"]
 title_color    = "mdl-color-text--accent-contrast"
 mathjax        = "true"
 
@@ -97,5 +97,5 @@ The Styblinski–Tang gradient function is:
 
 $$\frac\partial{\partial\theta_n}J(\theta) = 2\theta_n^3-16\theta_n+2.5$$
 
-The color scale of the surface plots in the accompanying notebook corresponds to the z-axis value, which represents cost $J$ for all values of $\theta$ in the displayed range. The color scale of the points on the surface, which represent the cost $J_{\theta_j}$ as a function of $\theta_j$ at each iteration of the model, corresponds to the iteration.
+The color scale of the surface plots in the [accompanying notebook](http://nbviewer.jupyter.org/github/CalebEverett/pysgd/blob/master/pysgd.ipynb) corresponds to the z-axis value, which represents cost $J$ for all values of $\theta$ in the displayed range. The color scale of the points on the surface, which represent the cost $J_{\theta_j}$ as a function of $\theta_j$ at each iteration of the model, corresponds to the iteration.
 

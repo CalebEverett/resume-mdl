@@ -15,10 +15,9 @@ skills = [
 ]
 
 overview = """
-Designed, developed, implemented and maintained all
-information systems to support the growth of the
-instituion and the achievement of outstanding student
-outcomes."""
+Designed, developed, implemented and maintained all information systems to support the growth of the
+institution and the achievement of outstanding student outcomes.
+"""
 
 accomplishments = [
 "Developed information system on the Force.com Platform integrated with Google Apps for Education, Edline Learning Community Management System, Hubspot Marketing Automation Software and Quickbooks to manage all aspects of the institution.",

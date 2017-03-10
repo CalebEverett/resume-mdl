@@ -14,7 +14,7 @@ tags = [ "gitlab", "ssl", "ssh", "revserse-proxy" ]
 
 +++
 
-I had a few troubles getting SSL and SSH set up for my self hosted community version of Gitlab. [Gitlab](https://about.gitlab.com/downloads/) itself is awesome and totally easy to install (the said under two minute and it was). My difficulties stemmed from my hosting set up.
+I had a few troubles getting SSL and SSH set up for my self hosted community version of Gitlab. [Gitlab](https://about.gitlab.com/downloads/) itself is awesome and totally easy to install (they claim under two minutes and it was). My difficulties stemmed from my hosting set up.
 
 #### Setup
 
