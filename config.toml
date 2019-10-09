@@ -6,6 +6,7 @@ pluralizelisttitles   = false   # http://pygments.org/docs/formatters/#HtmlForma
 pygmentsuseclasses    = true
 pygmentsstyle         = "manni" #['algol', 'algol_nu', 'autumn', 'borland', 'bw', 'colorful', 'default', 'emacs', 'friendly', 'fruity', 'igor', 'lovelace', 'manni', 'monokai', 'murphy', 'native', 'paraiso-dark', 'paraiso-light', 'pastie', 'perldoc', 'rrt', 'tango', 'trac', 'vim', 'vs', 'xcode']
 PymentsCodeFences     = true
+disqusShortname       = "CalebEverett"
 
 [taxonomies]
 tag                   = "tags"
@@ -20,28 +21,36 @@ name                  = "Posts"
 pre                   = "subject"
 url                   = "/posts"
 weight                = 20
-[[menu.main]]
-name                  = "Resume"
-pre                   = "work"
-url                   = "/resume"
-weight                = 30
+# [[menu.main]]
+# name                  = "Resume"
+# pre                   = "work"
+# url                   = "/resume"
+# weight                = 30
 
 
 [params]
-avatar                = "avatar.jpg"
+avatar                = "avatar.png"
 default_featured_img  = "/images/default_featured_img.png"
 google_analytics_id   = "UA-80388935-2"
-email                 = "mail@calebeverett.io"
+email                 = "caleb@calebeverett.io"
 welcome = """
-Looking for opportunities to develop cutting edge solutions to complex problems in a hands-on development capacity leveraging deep financial expertise, exceptional analytical capabilities and strong technical skills.
+##### Welcome
+Hello and thanks for visiting. I put this site together to have a more formal and public place to share some of the things I’ve done, I’m working on, thinking about and interested in. Putting things out there publicly forces me to put more thought into them and serves as a catalyst for connecting with people that would be fun to connect with, that can help me achieve my goals, or who would benefit from my help.
 
-##### Highlights
-* Studied quantitative marketing research at The Wharton School of the University of Pennsylvania
-* Top tier analyst in the Mergers and Acquisitions department at Morgan Stanley
-* First outside third-year analyst hired into Blackstone's Corporate Principal Group
-* Promoted from Associate to Partner in three years at FFL Partners
-* Built a vocational school from the ground up with over 80% completion and job placement rates
-* Developing Data Science and Machine Learning applications using Python, Node.js, Javascript, HTML, CSS, Linux, LXD, Docker and Amazon Web Services
+My plan is to include a wide range of content, from snippets and how-to's from coding projects, to projects I'm working on and have completed to perhaps even the ocassional thought on current issues. I'm going to try to strike the right balance between putting enough time and thought in to express myself clearly and hopefully serve as content valuable to someone other than me on the one hand, but not be such a perfectionist that it prevents me from actually getting anything out there, on the other hand.
+
+I love being on a mission, whether to learn something new, solve a complex problem, build something beautiful or be out in the world adventuring. I love working with similarly minded folks, who are first and foremost interested in doing great work and relish the opportunity to go the extra mile in pusuit of greatness. I am not motivated by profit as a goal unto itself, but do believe that doing truly great work in the world is rewarded with uncommon financial success.
+
+##### Interests
+I am currently working on getting engaged in my next big work mission. Here are some of the things I’m thinking about doing:
+
+* **Dig deep on deep learning** Become expert in solving deep learning problems. Learn the fast.ai software and Pytorch really well. Score highly in several Kaggle competitions. Get to know people who are in deep learning to get connected to an opportunity where I can dive deep in solving cutting edge, complex deep learning problems.
+* **accomplish.ai** Research and develop a plan to develop a deep learning, block chain, gig economy, fomo application that helps lower income students with barriers to success complete online education programs.
+* **Explore other potential ai applications**
+    - Insurance claims processing
+* **Dig deep into deep learning for finance**
+    - Cross between ai and private equity
+    - Learn how to develop trading algorithms
 """
 
 [params.org_types]
