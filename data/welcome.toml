@@ -1,0 +1,16 @@
+welcome = """
+##### Welcome
+Hello and thanks for visiting. I put this site together to have a more formal and public place to share some of the things I’ve done, I’m working on, thinking about and interested in. Putting things out there publicly forces me to put more thought into them and serves as a catalyst for connecting with people that would be fun to connect with, that can help me achieve my goals, or who would benefit from my help.
+
+My plan is to include a wide range of content, from snippets and how-to's from coding projects, to projects I'm working on and have completed to perhaps even the occasional thought on current issues. I'm going to try to strike the right balance between putting enough time and thought in to express myself clearly and hopefully serve as content valuable to someone other than me on the one hand, but not be such a perfectionist that it prevents me from actually getting anything out there, on the other hand.
+
+I love being on a mission, whether to learn something new, solve a complex problem, build something beautiful or be out in the world adventuring. I love working with similarly minded folks, who are first and foremost interested in doing great work and relish the opportunity to go the extra mile in pusuit of greatness. I am not motivated by profit as a goal unto itself, but do believe that doing truly great work in the world is rewarded with uncommon financial success.
+
+##### Interests
+I am currently working on getting engaged in my next big work mission. Here are some of the things I’m thinking about:
+
+* **Become an expert deep learning practitioner.** Master several leading deep learning libraries, including [fast.ia](https://docs.fast.ai/) and [Pytorch](https://pytorch.org/) and use them to build models for image recognition, image segmentation, object identification, natural language processing, speech recognition and tabular data. Score highly in multiple competitions. Contribute to open source projects. Publish blog posts and articles. Connect with people who are expert deep learning practitioners to identify job opportunities.
+* **Develop an application that helps lower income students with barriers to success complete online education programs - accomplish.ai.** Utilize artificial intelligence to analyze academic progress and student communications data to enable coaches to cost effectively support multiple students simultaneously. The goal here would be to realize the promise of low cost online education programs by providing the non-academic support these students need to avoid dropping out at a rate of over 80%.
+* **Develop an ai application in another vertical.** In the macro sense, ai has only just begun to be adopted in industry. As such, there are many opportunities to develop applications that create a lot of value. I have some experience in the insurance claims processing and payments facilitation verticals, both of which are data intensive and good candidates for applications.
+* **Become an expert in deep learning for finance.** Learn how to develop trading algorithms. Utilize learning resources on [Quantopian](https://www.quantopian.com), participate in daily competitions. Read books, papers, contribute to open source projects, network with practitioners to identify job opportunities.
+"""
